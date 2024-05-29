@@ -1,11 +1,12 @@
 <script lang="ts">
   import { business } from "$lib/config"
   import { page } from "$app/stores"
-  import Logo from "$lib/Logo.svelte"
+  import LogoVector from "$lib/LogoVector.svelte"
 
   let isActive = false
 
   function toggleNav() {
+    if (window.innerWidth > 1023) return
     isActive = !isActive
   }
 
@@ -15,11 +16,11 @@
 
 <svelte:window bind:scrollY={y} />
 
-<nav class:active={isActive} class={y >= 100 ? "scroll" : ""}>
+<nav id="mainnav" class:active={isActive} class={y >= 100 ? "scroll" : ""}>
   <div class="container">
     <!-- Logo -->
-    <a href="/" class="logo">
-      <Logo />
+    <a id="logo" href="/">
+      <LogoVector />
     </a>
 
     <!-- Nav links -->
@@ -39,13 +40,10 @@
           <a href="/blog" on:click={toggleNav}>Blog</a>
         </li>
       {/if}
-      <li class="">
-        <a href="/contact" class="btn" on:click={toggleNav}>Contact Us</a>
-      </li>
     </ul>
 
     <!-- Toggle -->
-    <button class="toggle" aria-label="Toggle" class:active={isActive} on:click={toggleNav}>
+    <button id="nav-toggle" aria-label="Toggle" class:active={isActive} on:click={toggleNav}>
       <span />
       <span />
       <span />

@@ -5,14 +5,49 @@
     margin: 0;
 }
 
-// Light mode styles
 :root {
-    --primary-color: #ff541a;
+    --primary: #8A1A23;
+    --secondary: #033B52;
     --box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     --toggleBg: #ffffff;
     --toggleText: #000000;
     --link-color: #ff541a;
 }
+
+/* Mona Sans */
+@font-face {
+    font-family: 'Mona Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local(''),
+        url('/fonts/Mona-Sans-Regular.woff2') format('woff2'),
+        url('/fonts/Mona-Sans-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Mona Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: local(''),
+        url('/fonts/Mona-Sans-Medium.woff2') format('woff2'),
+        url('/fonts/Mona-Sans-Medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Mona Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local(''),
+        url('/fonts/Mona-Sans-SemiBold.woff2') format('woff2'),
+        url('/fonts/Mona-Sans-SemiBold.woff') format('woff');
+}
+
+@primary: #8A1A23;
+@secondary: #033B52;
+@boxshadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
 @linkcolor: #ff541a;
 @headingcolor: #212121;
@@ -22,7 +57,7 @@ html {
 }
 
 body {
-    font-family: 'Anek Malayalam', sans-serif;
+    font-family: 'Mona Sans';
     font-size: 16px;
     overflow: hidden;
     display: block;

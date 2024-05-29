@@ -2,7 +2,7 @@
   // stores
   import { business } from "$lib/config"
   import { page } from "$app/stores"
-  import Logo from "$lib/Logo.svelte"
+  import Logo from "$lib/LogoVector.svelte"
   import SocialMedia from "./SocialMedia.svelte"
   import Copyright from "$lib/Copyright.svelte"
 </script>
