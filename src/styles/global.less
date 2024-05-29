@@ -82,7 +82,8 @@ input[type=number] {
 
 p {
     margin: 0 0 1.58em;
-    padding: 0
+    padding: 0;
+    line-height: 1.5;
 }
 
 ol,
@@ -140,7 +141,7 @@ a {
 /* ===============================================
 	h family || hfam 
 =============================================== */
-@h2fs: 25;
+@h2fs: 50;
 @h3fs: 23;
 @h4fs: 21;
 @h5fs: 20;
@@ -153,11 +154,10 @@ h4,
 h5,
 h6 {
     line-height: 1;
-    text-align: left;
     color: @headingcolor;
     margin: 0 0 (15/@h2fs)*1em;
     text-rendering: auto;
-    text-transform: capitalize
+    text-transform: capitalize;
 }
 
 h2:not(.topic) {
@@ -202,7 +202,8 @@ h6 {
     line-height: (@lh/@fs);
     background-color: (@bc);
     width: (@width/@fs*1em);
-    transition: background-color .33s ease, color .33s ease;
+    transition: background-color .33s ease,
+        color .33s ease;
 
     & when (@ls > 0) {
         letter-spacing: (@ls/1000*1em);
@@ -222,5 +223,57 @@ h6 {
 
     &:hover {
         background-color: (@hoverbc);
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 0 1em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: @primary;
+    color: #fff;
+    font-size: (15/20em);
+    line-height: (40/15);
+    transition: background-color .33s ease;
+
+    &:hover {
+        background-color: @secondary;
+    }
+}
+
+// reusable 
+.section-sub-heading {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    border: 1px solid fade(#000, 10%);
+    margin: 0 auto 3em;
+    border-radius: 1em;
+    text-transform: capitalize;
+    line-height: 2;
+    padding: 0 1em;
+
+    &::before {
+        content: '';
+        width: .5em;
+        height: .5em;
+        border-radius: 50%;
+        background-color: @primary;
+        margin: 0 .75em 0 0;
+    }
+}
+
+// sections descriptions 
+.section-description {
+    display: block;
+    width: 90%;
+    max-width: (800/20em);
+    margin: 0 auto (50/20em);
+
+    @media only screen and (min-width: 768px) {
+        margin-bottom: (150/20em);
     }
 }

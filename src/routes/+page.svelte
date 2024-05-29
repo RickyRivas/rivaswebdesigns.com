@@ -5,6 +5,8 @@
   // stores
   import { business } from "$lib/config"
   import { onMount } from "svelte"
+  import HomeServices from "$lib/sections/HomeServices.svelte"
+  import BizPartners from "$lib/sections/BizPartners.svelte"
 
   onMount(() => {
     // Netlify blog invite redirect
@@ -32,14 +34,16 @@
 <main>
   <section id="landing">
     <div class="content">
-      <span>Made with Sveltekit</span>
-      <h1>Web development,<br /> streamlined</h1>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates adipisci et magni
-        laborum, voluptatibus omnis soluta numquam neque eaque inventore.
+      <h1>Small Business Web Development & Design</h1>
+      <p class="subheading">
+        We are a Tulsa Web Design agency that provides custom-coded, professionally designed
+        websites that deliver premium results. No WordPress or Page-builders.
       </p>
-      <a href="/" class="cta">Read the docs</a>
+      <a href="/" class="btn">Read the docs</a>
     </div>
-    <img class="hero" src="/img01.jpg" alt="laptop" width="500" height="610" decoding="async" />
   </section>
+
+  <BizPartners />
+
+  <HomeServices />
 </main>
