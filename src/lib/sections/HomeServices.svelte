@@ -89,9 +89,6 @@
 </section>
 
 <style lang="less">
-  @import url("$styles/mixins.less");
-  @import url("$styles/global.less");
-
   #services {
     display: block;
     padding: 3em 0;
@@ -108,7 +105,9 @@
     }
 
     .cards {
-      .flexcenter;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: relative;
       flex-direction: column;
       width: 90%;
@@ -126,7 +125,7 @@
           width: 100%;
           height: 1px;
           left: 0;
-          background: linear-gradient(to right, transparent 15%, @primary, transparent 85%);
+          background: linear-gradient(to right, transparent 15%, var(--primary), transparent 85%);
           box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
           z-index: 1;
         }

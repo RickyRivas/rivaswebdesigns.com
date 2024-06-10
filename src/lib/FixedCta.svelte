@@ -11,12 +11,11 @@
 </a>
 
 <style lang="less">
-  @import url("$styles/mixins.less");
-  @import url("$styles/global.less");
-
   .fixed-cta {
     position: fixed;
-    .flexcenter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 3000;
     font-size: 20px;
     bottom: 1em;
@@ -24,7 +23,7 @@
     width: (125/20em);
     height: (125/20em);
     border-radius: 50%;
-    background: @primary
+    background: var(--primary)
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' fill='none' viewBox='0 0 25 25'%3E%3Cpath fill='%23fff' d='M7.813 17.969a2.344 2.344 0 0 1 2.343 2.343v.782l3.54-2.657a2.352 2.352 0 0 1 1.406-.468h6.773c.43 0 .781-.352.781-.782V3.126a.783.783 0 0 0-.781-.781H3.125a.784.784 0 0 0-.781.781v14.063c0 .43.351.78.781.78h4.688Zm2.343 6.054-.01.01-.249.186-.835.625a.789.789 0 0 1-.82.073.769.769 0 0 1-.43-.698v-3.906H3.126A3.128 3.128 0 0 1 0 17.188V3.124A3.128 3.128 0 0 1 3.125 0h18.75A3.128 3.128 0 0 1 25 3.125v14.063a3.128 3.128 0 0 1-3.125 3.125h-6.773l-4.946 3.71Z'/%3E%3C/svg%3E ")
       center no-repeat;
     background-size: (40/20em);
@@ -33,7 +32,7 @@
       background-color 0.33s ease;
     &:hover {
       transform: scale(1.1);
-      background-color: @secondary;
+      background-color: var(--secondary);
     }
   }
 
