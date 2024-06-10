@@ -83,7 +83,12 @@
     </div>
 
     <!-- Toggle -->
-    <button id="nav-toggle" aria-label="Toggle" class:active={isActive} on:click={toggleNav}>
+    <button
+      id="nav-toggle"
+      aria-label="Toggle"
+      class:active={isActive}
+      aria-expanded={isActive}
+      on:click={toggleNav}>
       <span />
       <span />
       <span />

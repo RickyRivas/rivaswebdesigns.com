@@ -38,25 +38,40 @@
 
 // default theme css vars
 :root {
+    // colors
     --primary: #8A1A23;
+    --primary-light: #8a1a230d;
     --secondary: #033B52;
+    // text
+    --heading: #212121;
+    --text: #212121;
+    --link: #ff541a;
+    // shadows
     --box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    --toggleBg: #ffffff;
-    --toggleText: #000000;
-    --link-color: #ff541a;
+    // section backgrounds
+    --bg: #fff;
+    --bg-alternate: #f8f9fa;
+    // header
+    --mainnav-bg: #ffffffb3;
+    --mainnav-link: var(--primary);
+    --mainnav-linkbg: var(--primary-light);
 }
 
 // Dark theme css vars
 html[data-theme='dark'] {
+    // colors
     --primary: rgb(73, 2, 2);
+    // text
+    --heading: #fff;
+    --text: #fff;
+    // section backgrounds
+    --bg: #25262c;
+    --bg-alternate: #000;
+    // header
+    --mainnav-bg: #222222cc;
+    --mainnav-link: #fff;
+    --mainnav-linkbg: #404040;
 }
-
-@primary: #8A1A23;
-@secondary: #033B52;
-@boxshadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
-@linkcolor: #ff541a;
-@headingcolor: #212121;
 
 html {
     overflow-y: scroll;
@@ -68,6 +83,8 @@ body {
     overflow: hidden;
     display: block;
     position: relative;
+    color: var(--text);
+    background-color: var(--bg);
 
     @media (min-width: 1300px) {
         font-size: 20px;
@@ -107,12 +124,12 @@ a {
 }
 
 #content a {
-    color: @linkcolor;
+    color: var(--link);
     transition: color 0.33s ease-in-out;
     text-decoration: underline;
 
     &:hover {
-        color: @headingcolor;
+        color: var(--text);
     }
 }
 
@@ -147,7 +164,7 @@ a {
 /* ===============================================
 	h family || hfam 
 =============================================== */
-@h2fs: 50;
+@h2fs: 45;
 @h3fs: 23;
 @h4fs: 21;
 @h5fs: 20;
@@ -160,8 +177,8 @@ h4,
 h5,
 h6 {
     line-height: 1;
-    color: @headingcolor;
-    margin: 0 0 (15/@h2fs)*1em;
+    color: var(--heading);
+    margin: 0 0 (40/@h2fs)*1em;
     text-rendering: auto;
     text-transform: capitalize;
 }
@@ -191,13 +208,13 @@ h6 {
 .btn {
     @parentfs: 20;
     @fs: 15;
-    @lh: 50;
+    @lh: 41;
     @ls: 0;
-    @height: 0;
+    @height: 40;
     @width: 150;
     @br: 0;
-    @bc: @linkcolor;
-    @hoverbc: @headingcolor;
+    @bc: var(--primary);
+    @hoverbc: var(--secondary);
     @borderstyle: false;
 
     display: inline-block;
@@ -207,9 +224,11 @@ h6 {
     font-size: (@fs/@parentfs*1em);
     line-height: (@lh/@fs);
     background-color: (@bc);
-    width: (@width/@fs*1em);
+    min-width: (@width/@fs*1em);
     transition: background-color .33s ease,
         color .33s ease;
+    padding: 0 1em;
+    text-transform: capitalize;
 
     & when (@ls > 0) {
         letter-spacing: (@ls/1000*1em);
@@ -220,7 +239,7 @@ h6 {
     }
 
     & when (@height > 0) {
-        height: @height/@fs*1em;
+        height: (@height/@fs*1em);
     }
 
     & when (@borderstyle) {
@@ -232,44 +251,47 @@ h6 {
     }
 }
 
-.btn {
-    display: inline-block;
-    padding: 0 1em;
-    text-decoration: none;
-    text-align: center;
-    text-transform: capitalize;
-    background-color: var(--primary);
-    color: #fff;
-    font-size: (15/20em);
-    line-height: (40/15);
-    transition: background-color .33s ease;
-
-    &:hover {
-        background-color: @secondary;
-    }
-}
-
 // reusable 
 .section-sub-heading {
+    @fs: 12;
+    @lh: 25;
+    @height: 25;
+    @marginbtn: 50;
+
+    .fs((@fs/20em));
+    .lh((@lh/@fs));
+
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    font-size: 12px;
-    border: 1px solid @primary;
-    margin: 0 auto 3em;
+    gap: (8/@fs*1em);
+    padding: 0 1em;
     border-radius: 1em;
     text-transform: capitalize;
-    line-height: 2;
-    padding: 0 1em;
-    background-color: fade(@primary, 2%);
+    border: 1px solid var(--primary);
+    margin: 0 auto (@marginbtn/@fs*1em);
+    background-color: var(--primary-light);
+    color: var(--text);
+
+    & when (@height > 0) {
+        height: (@height/@fs*1em);
+    }
+
+    span {
+        margin-top: .1em;
+    }
 
     &::before {
         content: '';
         width: .5em;
         height: .5em;
         border-radius: 50%;
-        background-color: @primary;
-        margin: 0 .75em 0 0;
+        background-color: var(--primary);
+    }
+
+    &.invert {
+        border-color: #fff;
+        color: #fff;
     }
 }
 

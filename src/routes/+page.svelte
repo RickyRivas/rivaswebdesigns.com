@@ -49,4 +49,36 @@
   <BizPartners />
 
   <HomeServices />
+
+  <section id="img-right">
+    <div class="container">
+      <div class="mod">
+        <h2>Websites that attract the right clients and increase revenue.</h2>
+        <p>
+          We use web conversion funnels and the latest design trends to turn your website browsers
+          into paying customers. Our years of experience in the web development industry allow us to
+          deliver top-notch websites that look great and function on any device from phones to
+          desktops.
+        </p>
+        <p>
+          Our standard 5-page website package is $150 per month. Our website subscription includes
+          24/7 customer service with your personal developer, on-page search engine optimization
+          (SEO), analytics, Google business profile optimization, lifetime updates, and more. We do
+          everything for you so that you can focus on your business. Nothing beats the peace of mind
+          of knowing that your web needs are always taken care of.
+        </p>
+        <a href="/" class="btn">Free Consultation</a>
+      </div>
+
+      <img
+        class="decor"
+        src="/laptop.svg"
+        alt="Laptop"
+        width="838"
+        height="470"
+        loading="lazy"
+        decoding="async"
+        fetchpriority="low" />
+    </div>
+  </section>
 </main>

@@ -6,7 +6,7 @@
 
     @media only screen and (min-width: 1024px) {
         font-size: inherit;
-        padding: 5em 0;
+        padding: 7em 0 5em;
     }
 
     h1 {
@@ -57,18 +57,10 @@
 #partners {
     display: block;
     text-align: center;
-    background-color: @secondary;
+    background-color: var(--secondary);
     color: #fff;
     padding: 3em 0;
     overflow: hidden;
-
-    .section-sub-heading {
-        border-color: #fff;
-    }
-
-    span.section {
-        border-color: fade(#fff, 20%)
-    }
 
     .row {
         .flexcenter;
@@ -89,5 +81,241 @@
             width: (100/@fs*1em);
             height: (67/@fs*1em);
         }
+    }
+}
+
+#services {
+    display: block;
+    padding: 3em 0;
+    text-align: center;
+
+    @media only screen and (min-width: 768px) {
+        padding: 5em 0 8em;
+    }
+
+    h2 {
+        width: 90%;
+        max-width: (650 / 50em);
+        margin-inline: auto;
+    }
+
+    .cards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        flex-direction: column;
+        width: 90%;
+        max-width: (1400/20em);
+        margin: 0 auto;
+
+        @media only screen and (min-width: 768px) {
+            flex-direction: row;
+
+            &::before,
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                left: 0;
+                background: linear-gradient(to right, transparent 15%, var(--primary), transparent 85%);
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                z-index: 1;
+            }
+
+            &::before {
+                top: 0;
+            }
+
+            &::after {
+                bottom: 0;
+            }
+        }
+    }
+
+    .card {
+        display: block;
+        position: relative;
+        width: 100%;
+        text-align: left;
+        padding: 2em;
+        background-color: #faf7f2;
+        transition: background-color 0.33s ease;
+        align-self: stretch;
+
+        &:nth-child(1) {
+            background: linear-gradient(180deg, transparent, #faf7f2);
+        }
+
+        &:nth-child(3) {
+            background: linear-gradient(0deg, transparent, #faf7f2);
+        }
+
+        &:nth-child(2) {
+            background-color: #faf7f2;
+
+            &::before,
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                left: 0;
+                background: linear-gradient(45deg, transparent, var(--primary), transparent);
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+
+            &::before {
+                top: 0;
+            }
+
+            &::after {
+                bottom: 0;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            font-size: min(1.5vw, 1em);
+
+            &:nth-child(2) {
+
+                &::before,
+                &::after {
+                    width: 1px;
+                    height: 150%;
+                    transform: translateY(-50%);
+                    top: 50%;
+                    background: linear-gradient(180deg, transparent, var(--primary), transparent);
+                }
+
+                &::before {
+                    left: 0;
+                }
+
+                &::after {
+                    left: auto;
+                    right: 0;
+                }
+            }
+
+            &:nth-child(1) {
+                background-image: none;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    background: linear-gradient(180deg, transparent, #faf7f2);
+                    width: 100%;
+                    height: 25%;
+                    top: -25%;
+                    left: 0;
+                    pointer-events: none;
+                }
+            }
+
+            &:nth-child(3) {
+                background-image: none;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    background: linear-gradient(0deg, transparent, #faf7f2);
+                    width: 100%;
+                    height: 25%;
+                    bottom: -25%;
+                    left: 0;
+                    pointer-events: none;
+                }
+            }
+        }
+
+        &:hover {
+            background-color: #faf7f2;
+
+            .gears {
+                .left-gear {
+                    transform: rotate(360deg);
+                    transition-duration: 5s;
+                }
+
+                .right-gear {
+                    transform: rotate(-360deg);
+                    transition-duration: 5s;
+                }
+            }
+        }
+
+        .icon {
+            display: block;
+            width: (96/20em);
+            height: (60/20em);
+            margin-bottom: (20/20em);
+
+            path {
+                transform-box: fill-box;
+                transition: transform 0.33s ease;
+                transform-origin: center;
+            }
+        }
+    }
+
+    h3.title {
+        font-size: (24/20em);
+        margin-bottom: (25/24em);
+    }
+
+    .card p {
+        margin-bottom: (30/16em);
+
+        @media only screen and (min-width: 768px) {
+            font-size: (16/20em);
+            margin-bottom: (30/16em);
+        }
+    }
+}
+
+#img-right {
+    display: block;
+    padding: 3em 0;
+    background-color: var(--bg-alternate);
+    text-align: center;
+
+    @media only screen and (min-width: 768px) {
+        font-size: 1.2vw;
+    }
+
+    @media only screen and (min-width: 1024px) {
+        font-size: ~"min(1.2vw, 1em)";
+        padding: 5em 0;
+    }
+
+    .container {
+        max-width: (1650/20em)
+    }
+
+    .mod {
+        .ib;
+        .va(top);
+        width: 90%;
+        max-width: (650/20em);
+        text-align: left;
+        margin: 0 0 (50/20em) 0;
+
+        @media only screen and (min-width: 1024px) {
+            margin: 0 (50/20em) 0 0;
+        }
+    }
+
+    .decor {
+        .ib;
+        .va(top);
+        width: 90%;
+        max-width: (800/20em);
+        height: auto;
     }
 }

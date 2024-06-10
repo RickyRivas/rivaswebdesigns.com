@@ -13,10 +13,10 @@
         .overlay;
         -webkit-backdrop-filter: blur(15px);
         backdrop-filter: blur(15px);
-        background-color: #ffffffb3;
+        background-color: var(--mainnav-bg);
         pointer-events: none;
         z-index: 3;
-        box-shadow: @boxshadow;
+        border-bottom: .5px solid var(--text);
         transition: background-color .33s ease,
             backdrop-filter .33s ease,
             box-shadow .33s ease;
@@ -45,7 +45,7 @@
         &::before {
             backdrop-filter: none;
             box-shadow: none;
-            background-color: @primary;
+            background-color: var(--primary);
         }
 
         &::after {
@@ -91,7 +91,7 @@
             width: 100%;
             height: 100%;
             display: inline-block;
-            color: #212121;
+            color: var(--text);
             transition: color .33s ease;
         }
     }
@@ -159,13 +159,13 @@
                 @lh: 30;
 
                 display: block;
-                color: @primary;
+                color: var(--mainnav-link);
                 text-transform: capitalize;
-                font-weight: 400;
                 font-size: 16px;
                 line-height: (@lh/@fs);
                 padding: (10em/@fs) (20em/@fs);
                 transition: background-color .33s ease;
+                .reg;
 
                 @media only screen and (min-width: 1024px) {
                     padding: 0 (10em/@fs);
@@ -176,7 +176,7 @@
             &.active,
             &:hover {
                 a {
-                    background-color: fade(@primary, 8%);
+                    background-color: var(--mainnav-linkbg);
                 }
             }
         }
@@ -199,7 +199,7 @@
         &::before {
             content: '';
             .overlay;
-            background-color: @primary;
+            background-color: var(--primary);
             transition: transform .33s ease,
                 background-color .33s ease,
                 border-radius .33s ease;
@@ -224,7 +224,7 @@
 
         &:hover {
             &::before {
-                background-color: @secondary;
+                background-color: var(--secondary);
             }
         }
 
@@ -236,7 +236,7 @@
             }
 
             span {
-                background-color: @primary;
+                background-color: var(--primary);
             }
 
             span {
@@ -261,17 +261,23 @@
     form.theme-toggle {
         @square: 20;
         .ib;
-        .va(top);
+        .va(middle);
         width: (@square/20em);
         height: (@square/20em);
+        cursor: pointer;
+
+        @media only screen and (min-width: 1024px) {
+            margin-bottom: .2em;
+        }
 
         button {
             border: 0;
             padding: 0;
             margin: 0;
             line-height: 0;
-            color: #212121;
+            color: var(--text);
             background: none;
+            transition: color .33s ease;
 
             svg {
                 .ib;

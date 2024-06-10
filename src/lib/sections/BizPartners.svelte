@@ -34,7 +34,9 @@
 </script>
 
 <section id="partners">
-  <span class="section-sub-heading">trusted by agencies and businesses</span>
+  <span class="section-sub-heading invert">
+    <span> trusted by agencies and businesses </span>
+  </span>
 
   <div class="row" bind:this={leftLax}>
     <div class="item">ink bros custom apparel</div>
