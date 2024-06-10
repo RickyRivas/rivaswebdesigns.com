@@ -33,13 +33,16 @@
 
 <main>
   <section id="landing">
-    <div class="content">
-      <h1>Small Business Web Development & Design</h1>
-      <p class="subheading">
-        We are a Tulsa Web Design agency that provides custom-coded, professionally designed
-        websites that deliver premium results. No WordPress or Page-builders.
-      </p>
-      <a href="/" class="btn">Read the docs</a>
+    <h1>Small Business Web Development & Design</h1>
+    <p class="subheading">
+      We are a Tulsa Web Design agency that provides custom-coded, professionally designed websites
+      that deliver premium results. No WordPress or Page-builders.
+    </p>
+    <a href="/" class="btn">Read the docs</a>
+    <div class="video-wrapper">
+      <video id="herovid" preload="none" autoplay loop muted playsinline poster="">
+        <source type="video/mp4" src="/video/hero-video.mp4" />
+      </video>
     </div>
   </section>
 

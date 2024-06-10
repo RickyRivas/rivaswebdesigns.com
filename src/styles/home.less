@@ -1,25 +1,24 @@
 #landing {
-    .flexcenter;
+    display: block;
     text-align: center;
     min-height: 600px;
+    padding: 8em 0 3em;
 
     @media only screen and (min-width: 1024px) {
         font-size: inherit;
         padding: 5em 0;
     }
 
-    .content {
-        display: block;
-        width: 90%;
-        max-width: (780/20em);
-    }
-
     h1 {
         @fs: 64;
         @lh: 66;
+        @marginbtm: 30;
 
         font-size: min(8vw, (@fs/20em));
         line-height: (@lh/@fs);
+        margin: 0 auto (@marginbtm/@fs*1em);
+        max-width: (780em/@fs);
+        width: 90%;
         .bold;
     }
 
@@ -28,8 +27,30 @@
         @lh: 30;
 
         display: block;
-        .fs(max(16px, (@fs/20em)));
         .lh((@lh/@fs));
+        width: 90%;
+        margin: 0 auto (50em/@fs);
+        max-width: (780em/@fs);
+    }
+
+    .btn {
+        margin-bottom: 4em;
+    }
+
+    .video-wrapper {
+        display: block;
+        position: relative;
+        width: 90%;
+        max-width: (1200/20em);
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    #herovid {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
     }
 }
 
@@ -64,7 +85,7 @@
         text-transform: capitalize;
 
         .flag {
-            display: inline-block;
+            .ib;
             width: (100/@fs*1em);
             height: (67/@fs*1em);
         }

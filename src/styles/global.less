@@ -249,12 +249,13 @@ h6 {
     justify-content: center;
     align-items: center;
     font-size: 12px;
-    border: 1px solid fade(#000, 10%);
+    border: 1px solid @primary;
     margin: 0 auto 3em;
     border-radius: 1em;
     text-transform: capitalize;
     line-height: 2;
     padding: 0 1em;
+    background-color: fade(@primary, 2%);
 
     &::before {
         content: '';
