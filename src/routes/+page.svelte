@@ -7,6 +7,7 @@
   import { onMount } from "svelte"
   import HomeServices from "$lib/sections/HomeServices.svelte"
   import BizPartners from "$lib/sections/BizPartners.svelte"
+  import HomeAbout from "$lib/sections/HomeAbout.svelte"
 
   onMount(() => {
     // Netlify blog invite redirect
@@ -81,4 +82,6 @@
         fetchpriority="low" />
     </div>
   </section>
+
+  <HomeAbout />
 </main>

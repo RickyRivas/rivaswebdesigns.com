@@ -44,7 +44,7 @@
     --secondary: #033B52;
     // text
     --heading: #212121;
-    --text: #212121;
+    --text: #333;
     --link: #ff541a;
     // shadows
     --box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -165,8 +165,8 @@ a {
 	h family || hfam 
 =============================================== */
 @h2fs: 45;
-@h3fs: 23;
-@h4fs: 21;
+@h3fs: 35;
+@h4fs: 30;
 @h5fs: 20;
 @h6fs: 19;
 
@@ -304,5 +304,47 @@ h6 {
 
     @media only screen and (min-width: 768px) {
         margin-bottom: (150/20em);
+    }
+}
+
+.subheading {
+    @fs: 14;
+    @lh: 40;
+    @height: 40;
+
+    display: block;
+    position: absolute;
+    background-color: var(--bg);
+    top: (-39/@fs*1em);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 1em;
+    font-size: (@fs/20em);
+    line-height: (@lh/@fs*1em);
+    text-transform: capitalize;
+    white-space: nowrap;
+    min-width: (270/@fs*1em);
+
+    .shape {
+        display: block;
+        position: absolute;
+        width: (62/@fs*1em);
+        height: (40/@fs*1em);
+        top: 0;
+        pointer-events: none;
+        color: var(--secondary);
+    }
+
+    .left-shape {
+        right: calc(100% - .5em);
+    }
+
+    .right-shape {
+        left: calc(100% - .5em);
+    }
+
+    &.green {
+        color: #fff;
+        background-color: var(--secondary);
     }
 }
