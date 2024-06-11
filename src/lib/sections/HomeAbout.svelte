@@ -1,15 +1,4 @@
-<script>
-  import LeftShape from "$lib/icons/LeftShape.svelte"
-  import RightShape from "$lib/icons/RightShape.svelte"
-</script>
-
 <section id="home-about">
-  <span class="subheading green">
-    <LeftShape />
-    meet the founder
-    <RightShape />
-  </span>
-  <!-- <h2>About the founder</h2> -->
   <div class="container">
     <div class="decor">
       <img
@@ -23,7 +12,7 @@
         fetchpriority="low" />
     </div>
     <div class="mod">
-      <h3>Ricky Rivas</h3>
+      <h2>Meet Ricky Rivas</h2>
       <span class="title">Web Developer & Founder</span>
       <p>
         I'm a Web Developer based in Tulsa, Oklahoma. I've always been passionate about technology.

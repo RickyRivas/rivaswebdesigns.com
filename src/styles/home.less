@@ -16,33 +16,13 @@
 
         font-size: min(8vw, (@fs/20em));
         line-height: (@lh/@fs);
-        margin: 0 auto (@marginbtm/@fs*1em);
-        max-width: (780em/@fs);
-        width: 90%;
+        margin-bottom: (@marginbtm/@fs*1em);
         .bold;
-    }
-
-    .subheading {
-        @fs: 20;
-        @lh: 30;
-
-        display: block;
-        .lh((@lh/@fs));
-        width: 90%;
-        margin: 0 auto (50em/@fs);
-        max-width: (780em/@fs);
-    }
-
-    .btn {
-        margin-bottom: 4em;
     }
 
     .video-wrapper {
         display: block;
         position: relative;
-        width: 90%;
-        max-width: (1200/20em);
-        margin: 0 auto;
         overflow: hidden;
     }
 
@@ -51,6 +31,59 @@
         width: 100%;
         height: auto;
         aspect-ratio: 16 / 9;
+    }
+
+    .landing-form {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: var(--box-shadow);
+        font-size: 20px;
+        padding: .25em;
+        background-color: var(--bg);
+        gap: (10/20em);
+
+        .form-control {
+            @parentfs: 20;
+            @fs: 15;
+            @lh: 41;
+            @ls: 0;
+            @height: 40;
+            @width: 150;
+            @br: 0;
+            @bc: var(--primary);
+            @hoverbc: var(--secondary);
+            @borderstyle: false;
+
+            .ib;
+            .va(top);
+
+            input[type='email'] {
+                display: block;
+                border: 0;
+                width: 100%;
+                font-size: 15px;
+                line-height: (@lh/@fs);
+                padding: 0 1em;
+                min-width: (250/@fs*1em);
+                width: (250/@fs*1em);
+                color: var(--text);
+                background: none;
+                border-radius: 0;
+
+                &::placeholder {
+                    color: var(--text);
+                }
+
+                & when (@height > 0) {
+                    height: (@height/@fs*1em);
+                }
+            }
+        }
+
+        .btn {
+            min-width: auto;
+        }
     }
 }
 
@@ -62,48 +95,6 @@
     padding: 3em 0 5em;
     position: relative;
     z-index: 1;
-
-    .subheading {
-        @fs: 14;
-        @lh: 40;
-        @height: 40;
-
-        display: block;
-        position: absolute;
-        background-color: var(--secondary);
-        top: (-39/@fs*1em);
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 0 1em;
-        font-size: (@fs/20em);
-        line-height: (@lh/@fs*1em);
-        text-transform: capitalize;
-        white-space: nowrap;
-
-        &::before {
-            content: '';
-            display: block;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='62' height='40' fill='none' viewBox='0 0 62 40'%3E%3Cpath fill='%23033B52' fill-rule='evenodd' d='M0 39.996h61.807V0h-9.469a9.437 9.437 0 0 0-6.613 2.717L8.5 35.5c-2.849 2.163-5 4-8.5 4.496Z' clip-rule='evenodd'/%3E%3C/svg%3E") center / cover no-repeat;
-            position: absolute;
-            right: calc(100% - .5em);
-            top: 0;
-            width: (62/@fs*1em);
-            height: (40/@fs*1em);
-            pointer-events: none;
-        }
-
-        &::after {
-            content: '';
-            display: block;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='62' height='40' fill='none' viewBox='0 0 62 40'%3E%3Cpath fill='%23033B52' fill-rule='evenodd' d='M61.807 39.996H0V0h9.469a9.436 9.436 0 0 1 6.613 2.717L53.307 35.5c2.849 2.163 5 4 8.5 4.496Z' clip-rule='evenodd'/%3E%3C/svg%3E") center / cover no-repeat;
-            position: absolute;
-            left: calc(100% - .5em);
-            top: 0;
-            width: (62/@fs*1em);
-            height: (40/@fs*1em);
-            pointer-events: none;
-        }
-    }
 
     .row {
         .flexcenter;
@@ -136,49 +127,14 @@
 
     @media only screen and (min-width: 768px) {
         padding: 5em 0 8em;
-    }
 
-    .subheading {
-        @fs: 14;
-        @lh: 40;
-        @height: 40;
-
-        display: block;
-        position: absolute;
-        background-color: var(--bg);
-        top: (-39/@fs*1em);
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 0 1em;
-        font-size: (@fs/20em);
-        line-height: (@lh/@fs*1em);
-        text-transform: capitalize;
-        white-space: nowrap;
-        min-width: (270/@fs*1em);
-
-        .shape {
-            display: block;
-            position: absolute;
-            width: (62/@fs*1em);
-            height: (40/@fs*1em);
-            top: 0;
-            pointer-events: none;
-            color: var(--bg);
+        .section-header {
+            margin-bottom: (150/20em);
         }
 
-        .left-shape {
-            right: calc(100% - .5em);
+        h2 {
+            width: 100%;
         }
-
-        .right-shape {
-            left: calc(100% - .5em);
-        }
-    }
-
-    h2 {
-        width: 90%;
-        max-width: (650 / 50em);
-        margin-inline: auto;
     }
 
     .cards {
@@ -188,11 +144,12 @@
         position: relative;
         flex-direction: column;
         width: 90%;
-        max-width: (1400/20em);
+        max-width: (1298/20em);
         margin: 0 auto;
 
         @media only screen and (min-width: 768px) {
             flex-direction: row;
+            width: 96%;
 
             &::before,
             &::after {
@@ -223,20 +180,20 @@
         width: 100%;
         text-align: left;
         padding: 2em;
-        background-color: #faf7f2;
+        background-color: var(--bg-alternate);
         transition: background-color 0.33s ease;
         align-self: stretch;
 
         &:nth-child(1) {
-            background: linear-gradient(180deg, transparent, #faf7f2);
+            background: linear-gradient(180deg, transparent, var(--bg-alternate));
         }
 
         &:nth-child(3) {
-            background: linear-gradient(0deg, transparent, #faf7f2);
+            background: linear-gradient(0deg, transparent, var(--bg-alternate));
         }
 
         &:nth-child(2) {
-            background-color: #faf7f2;
+            background-color: var(--bg-alternate);
 
             &::before,
             &::after {
@@ -290,7 +247,7 @@
                     content: "";
                     display: block;
                     position: absolute;
-                    background: linear-gradient(180deg, transparent, #faf7f2);
+                    background: linear-gradient(180deg, transparent, var(--bg-alternate));
                     width: 100%;
                     height: 25%;
                     top: -25%;
@@ -306,7 +263,7 @@
                     content: "";
                     display: block;
                     position: absolute;
-                    background: linear-gradient(0deg, transparent, #faf7f2);
+                    background: linear-gradient(0deg, transparent, var(--bg-alternate));
                     width: 100%;
                     height: 25%;
                     bottom: -25%;
@@ -317,7 +274,7 @@
         }
 
         &:hover {
-            background-color: #faf7f2;
+            background-color: var(--bg-alternate);
 
             .gears {
                 .left-gear {
@@ -361,44 +318,92 @@
     }
 }
 
-#img-right {
+#home-feature {
     display: block;
+    position: relative;
     padding: 3em 0;
     background-color: var(--bg-alternate);
     text-align: center;
+    z-index: 10;
 
     @media only screen and (min-width: 768px) {
         font-size: 1.2vw;
     }
 
     @media only screen and (min-width: 1024px) {
-        font-size: ~"min(1.2vw, 1em)";
+        font-size: inherit;
         padding: 5em 0;
     }
 
     .container {
-        max-width: (1650/20em)
-    }
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: (30/20em);
 
-    .mod {
-        .ib;
-        .va(top);
-        width: 90%;
-        max-width: (650/20em);
-        text-align: left;
-        margin: 0 0 (50/20em) 0;
-
-        @media only screen and (min-width: 1024px) {
-            margin: 0 (50/20em) 0 0;
+        @media only screen and (min-width: 768px) {
+            flex-direction: row;
         }
     }
 
-    .decor {
-        .ib;
-        .va(top);
-        width: 90%;
+    .mod {
+        display: block;
+        text-align: left;
         max-width: (800/20em);
-        height: auto;
+
+        .decor {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .btn {
+            margin-bottom: 3em;
+        }
+    }
+
+    .benefits {
+        display: inline-flex;
+        .va(top);
+        max-width: (440/20em);
+        text-align: left;
+        flex-direction: column;
+        gap: (20/20em);
+
+        @media only screen and (min-width: 768px) {
+            margin-top: (95/20em);
+        }
+
+        a {
+            color: var(--text);
+            display: flex;
+            gap: 1em;
+            background-color: var(--bg);
+            padding: .5em;
+
+            h3 {
+                font-size: (15/20em);
+                line-height: (25/15);
+            }
+
+            p {
+                font-size: (13/20em);
+                margin: 0;
+            }
+
+            .icon {
+                display: block;
+                width: (80/20em);
+                height: (80/20em);
+                background-color: var(--bg-alternate);
+            }
+
+            .inner-mod {
+                display: block;
+                width: 80%;
+            }
+        }
     }
 }
 
@@ -418,17 +423,6 @@
         padding: 5em 0;
     }
 
-    &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 1.5em;
-        background: linear-gradient(to bottom, var(--secondary) 20%, transparent 100%);
-    }
-
     .container {
         display: flex;
         justify-content: center;
@@ -444,7 +438,6 @@
     .decor {
         .ib;
         .va(top);
-        width: 90%;
         max-width: (500/20em);
         margin: 0;
         line-height: 0;
@@ -466,7 +459,6 @@
     .mod {
         .ib;
         .va(top);
-        width: 90%;
         max-width: (500/20em);
         text-align: left;
         background-color: var(--bg-alternate);

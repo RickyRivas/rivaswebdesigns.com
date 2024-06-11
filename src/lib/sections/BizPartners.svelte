@@ -2,6 +2,7 @@
   import UsFlag from "./../icons/UsFlag.svelte"
   import TulsaFlag from "./../icons/TulsaFlag.svelte"
   import { onMount } from "svelte"
+  import SubHeading from "$lib/components/SubHeading.svelte"
   let leftLax, rightLax
 
   onMount(async () => {
@@ -34,11 +35,7 @@
 </script>
 
 <section id="partners">
-  <span class="subheading"> trusted by agencies and businesses </span>
-
-  <!-- <span class="section-sub-heading invert">
-    <span> trusted by agencies and businesses </span>
-  </span> -->
+  <SubHeading text="trusted by agencies and businesses" version="blue" />
 
   <div class="row" bind:this={leftLax}>
     <div class="item">ink bros custom apparel</div>

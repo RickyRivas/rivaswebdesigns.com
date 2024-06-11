@@ -50,7 +50,7 @@
     --box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     // section backgrounds
     --bg: #fff;
-    --bg-alternate: #f8f9fa;
+    --bg-alternate: #faf7f2;
     // header
     --mainnav-bg: #ffffffb3;
     --mainnav-link: var(--primary);
@@ -156,15 +156,19 @@ a {
 
 .container {
     display: block;
-    width: 96%;
-    max-width: (1200/20em);
+    width: 90%;
+    max-width: (1298/20em);
     margin: 0 auto;
+
+    @media only screen and (min-width: 1024px) {
+        width: 96%;
+    }
 }
 
 /* ===============================================
 	h family || hfam 
 =============================================== */
-@h2fs: 45;
+@h2fs: 49;
 @h3fs: 35;
 @h4fs: 30;
 @h5fs: 20;
@@ -228,7 +232,9 @@ h6 {
     transition: background-color .33s ease,
         color .33s ease;
     padding: 0 1em;
+    margin: 0;
     text-transform: capitalize;
+    border: 0;
 
     & when (@ls > 0) {
         letter-spacing: (@ls/1000*1em);
@@ -295,6 +301,13 @@ h6 {
     }
 }
 
+.section-header {
+    display: block;
+    text-align: left;
+    margin-bottom: (75/20em);
+    max-width: (800em/20em);
+}
+
 // sections descriptions 
 .section-description {
     display: block;
@@ -325,6 +338,12 @@ h6 {
     white-space: nowrap;
     min-width: (270/@fs*1em);
 
+    @media only screen and (min-width: 768px) {
+        transform: none;
+        right: calc(50% + 23.5em);
+        left: auto;
+    }
+
     .shape {
         display: block;
         position: absolute;
@@ -332,7 +351,7 @@ h6 {
         height: (40/@fs*1em);
         top: 0;
         pointer-events: none;
-        color: var(--secondary);
+        color: var(--bg);
     }
 
     .left-shape {
@@ -343,8 +362,107 @@ h6 {
         left: calc(100% - .5em);
     }
 
-    &.green {
-        color: #fff;
+    &.blue {
         background-color: var(--secondary);
+
+        .shape {
+            color: var(--secondary);
+        }
+    }
+
+    &.grey {
+        background-color: var(--bg-alternate);
+
+        .shape {
+            color: var(--bg-alternate);
+        }
+    }
+}
+
+.modal {
+    z-index: 9999;
+    .overlay;
+    .flexcenter;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    padding: 1em;
+    text-align: center;
+
+    .container {
+        background-color: var(--bg);
+        padding: 3em 1em;
+        position: relative;
+        width: 96%;
+
+        form {
+            width: 100%;
+            max-width: (500/20em);
+            background-color: var(--bg-alternate);
+            color: var(--text);
+            padding: 1em;
+            .ib;
+            .va(top);
+            box-shadow: var(--box-shadow);
+
+            .form-control {
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin-bottom: 1em;
+
+                label {
+                    display: block;
+                    width: 100%;
+
+                    input[type='text'],
+                    input[type='email'],
+                    input[type='number'] {
+                        display: block;
+                        font-size: 16px;
+                        line-height: (40/16);
+                        border: 0;
+                        background-color: var(--bg);
+                        color: var(--text);
+                        width: 100%;
+                        padding: 0 1em;
+
+                        &::placeholder {
+                            color: var(--text);
+                        }
+                    }
+                }
+
+                textarea {
+                    resize: none;
+                    border: 0;
+                    padding: 1em;
+                    outline: none;
+                    font-family: inherit;
+                    font-size: 16px;
+                    color: var(--text);
+                    background: none;
+                    background-color: var(--bg);
+                    display: block;
+                    width: 100%;
+
+                    &::placeholder {
+                        color: var(--text);
+                    }
+                }
+            }
+
+            button.btn {
+                width: 100%;
+                font-size: 16px;
+            }
+        }
+
+        button.close-modal {
+            position: absolute;
+            top: 1em;
+            right: 1em;
+            min-width: auto;
+            width: auto;
+        }
     }
 }

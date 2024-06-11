@@ -1,27 +1,24 @@
 <script>
+  import SubHeading from "$lib/components/SubHeading.svelte"
   import LeftShape from "$lib/icons/LeftShape.svelte"
   import RightShape from "$lib/icons/RightShape.svelte"
 </script>
 
 <section id="services">
-  <span class="subheading">
-    <LeftShape />
-    what we do
-    <RightShape />
-  </span>
-  <!-- <span class="section-sub-heading">
-    <span> What We Do </span>
-  </span> -->
+  <SubHeading text="What we do" />
 
-  <h2>building for the modern web since 2021</h2>
-
-  <p class="section-description">
-    Rivas Web Designs offers cutting-edge digital marketing solutions including custom web
-    development and design. Our websites are professionally designed and hand-coded from the ground
-    up in order to put you ahead of your competition and help your business increase revenue.
-    Upgrade away from generic and boring templates from Wix or Squarespace into something new and
-    tailored for your business.
-  </p>
+  <div class="container">
+    <div class="section-header">
+      <h2>We design and develop cutting-edge websites that solve real business problems.</h2>
+      <p>
+        Rivas Web Designs offers cutting-edge digital marketing solutions including custom web
+        development and design. Our websites are professionally designed and hand-coded from the
+        ground up in order to put you ahead of your competition and help your business increase
+        revenue. Upgrade away from generic and boring templates from Wix or Squarespace into
+        something new and tailored for your business.
+      </p>
+    </div>
+  </div>
 
   <div class="cards">
     <div class="card">
