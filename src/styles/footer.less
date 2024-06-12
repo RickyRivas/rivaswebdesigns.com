@@ -10,8 +10,9 @@ footer {
         text-decoration: none;
         transition: color .33s ease;
 
-        &:hover {
-            color: var(--primary);
+        &:hover,
+        &.active {
+            color: #ff9099;
         }
     }
 
@@ -49,15 +50,11 @@ footer {
     }
 
     p {
-        @fs: 15;
-        @lh: 20;
+        @fs: 18;
+        @lh: 25;
         color: #fff;
         .fs((@fs/20em));
         .lh((@lh/@fs));
-
-        @media only screen and (min-width: 768px) {
-            // width: 50%;
-        }
     }
 
     .item {
@@ -70,7 +67,7 @@ footer {
             border-bottom: 1px solid #fff;
 
             p {
-                width: 50%;
+                width: 75%;
             }
         }
 
@@ -85,6 +82,10 @@ footer {
                 width: 75%;
                 padding-left: 0;
                 border: 0;
+
+                p {
+                    width: 50%;
+                }
             }
 
             &:nth-child(n+2) {
@@ -104,8 +105,8 @@ footer {
         ul {
             list-style: none;
             margin: 0;
-            @linkfs: 15;
-            @linklh: 20;
+            @linkfs: 18;
+            @linklh: 25;
 
             li {
                 a {
@@ -114,6 +115,7 @@ footer {
                     .lh((@linklh/@linkfs));
                     text-transform: capitalize;
                     width: 100%;
+                    .reg;
                 }
             }
         }
