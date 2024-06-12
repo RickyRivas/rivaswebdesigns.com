@@ -20,19 +20,6 @@
         .bold;
     }
 
-    .video-wrapper {
-        display: block;
-        position: relative;
-        overflow: hidden;
-    }
-
-    #herovid {
-        display: block;
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
-    }
-
     .landing-form {
         display: inline-flex;
         justify-content: center;
@@ -83,6 +70,34 @@
 
         .btn {
             min-width: auto;
+        }
+    }
+
+    .video-container {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        max-width: (1298/20em);
+        height: auto;
+        line-height: 0;
+        filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, .3));
+
+        .ipad-vector {
+            position: relative;
+            z-index: 1;
+        }
+
+        .video-wrap {
+            overflow: hidden;
+            .overlay;
+            border-radius: 8%;
+
+            #herovid {
+                aspect-ratio: 16 / 9;
+                .overlay;
+                object-fit: cover;
+            }
         }
     }
 }

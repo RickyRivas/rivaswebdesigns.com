@@ -80,18 +80,17 @@
           </svg>
         </button>
       </form>
+      <!-- Toggle -->
+      <button
+        id="nav-toggle"
+        aria-label="Toggle"
+        class:active={isActive}
+        aria-expanded={isActive}
+        on:click={toggleNav}>
+        <span />
+        <span />
+        <span />
+      </button>
     </div>
-
-    <!-- Toggle -->
-    <button
-      id="nav-toggle"
-      aria-label="Toggle"
-      class:active={isActive}
-      aria-expanded={isActive}
-      on:click={toggleNav}>
-      <span />
-      <span />
-      <span />
-    </button>
   </div>
 </nav>
