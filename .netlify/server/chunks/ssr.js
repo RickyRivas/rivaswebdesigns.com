@@ -22,9 +22,6 @@ function subscribe(store, ...callbacks) {
   const unsub = store.subscribe(...callbacks);
   return unsub.unsubscribe ? () => unsub.unsubscribe() : unsub;
 }
-function null_to_empty(value) {
-  return value == null ? "" : value;
-}
 let current_component;
 function set_current_component(component) {
   current_component = component;
@@ -119,26 +116,25 @@ function create_ssr_component(fn) {
   };
 }
 function add_attribute(name, value, boolean) {
-  if (value == null || boolean && !value)
+  if (value == null || boolean)
     return "";
-  const assignment = boolean && value === true ? "" : `="${escape(value, true)}"`;
+  const assignment = `="${escape(value, true)}"`;
   return ` ${name}${assignment}`;
 }
 function add_classes(classes) {
   return classes ? ` class="${classes}"` : "";
 }
 export {
-  add_attribute as a,
-  setContext as b,
+  escape as a,
+  add_attribute as b,
   create_ssr_component as c,
-  each as d,
-  escape as e,
+  setContext as d,
+  each as e,
   add_classes as f,
   getContext as g,
-  noop as h,
-  safe_not_equal as i,
+  safe_not_equal as h,
   missing_component as m,
-  null_to_empty as n,
+  noop as n,
   subscribe as s,
   validate_component as v
 };

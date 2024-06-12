@@ -52,7 +52,7 @@
           {#each Object.entries(business.socials) as [key, value]}
             {#if value !== "/"}
               <li>
-                <a href="/{value}" target="_blank">
+                <a href={value} target="_blank">
                   <span class="screenreader">follow us on</span>
                   {key}</a>
               </li>

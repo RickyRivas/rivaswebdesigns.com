@@ -1,60 +1,64 @@
-const URL = "https://site.com";
-const companyName = "Company Name";
-const cityAndState = "Tulsa, Ok";
-const industry = "Web Design";
-const phone = "(918) 123-4567";
-const email = "biz@email.com";
-const pages = [
-  {
-    name: "Home",
-    path: "/",
-    metaDescription: ""
+const business = {
+  canonical: "https://site.com",
+  name: "Rivas Web Designs",
+  cityAndState: "Tulsa, Ok",
+  industry: "Web Design",
+  ogImage: "",
+  phone: "(918) 123-4567",
+  address: "1234 East Tulsa, Ok 12345",
+  email: "info@rivaswebdesigns.com",
+  // Set to true if client opts for blog
+  includeBlog: true,
+  homepage: {
+    metaDescription: "This is the homepage description"
   },
-  {
-    name: "About",
-    path: "/about",
-    metaDescription: ""
+  interiorPages: [
+    {
+      name: "About",
+      path: "/about",
+      title: "About Page",
+      description: "About Page Description",
+      imageURL: ""
+    },
+    {
+      name: "services",
+      path: "/services",
+      title: "Services Page",
+      description: "Services Page Description",
+      imageURL: ""
+    },
+    {
+      name: "Faq",
+      path: "/faq",
+      title: "FAQ Page",
+      description: "FAQ Page Description",
+      imageURL: ""
+    },
+    {
+      name: "Contact",
+      path: "/contact",
+      title: "Contact Page",
+      description: "Contact Page Description",
+      imageURL: ""
+    }
+  ],
+  businessHours: {
+    monday: "8:00am to 5:00pm",
+    tuesday: "8:00am to 5:00pm",
+    wednesday: "8:00am to 5:00pm",
+    thursday: "8:00am to 5:00pm",
+    friday: "8:00am to 5:00pm",
+    saturday: "Closed",
+    sunday: "Closed"
   },
-  {
-    name: "services",
-    path: "/services",
-    metaDescription: ""
-  },
-  {
-    name: "Faq",
-    path: "/faq",
-    metaDescription: ""
-  },
-  {
-    name: "Contact",
-    path: "/contact",
-    metaDescription: ""
+  socials: {
+    facebook: "https://www.facebook.com/rivaswebdesigns",
+    instagram: "/",
+    xTwitter: "/",
+    youtube: "/",
+    google: "https://goo.gl/maps/mc8AhywjNL8WYkFv8"
   }
-];
-const services = [
-  {
-    name: "Service Item",
-    description: `Talk about the service with keywords people will be searching for it by. Keep it 1-2
-						sentences.`
-  },
-  {
-    name: "Service Item",
-    description: `Talk about the service with keywords people will be searching for it by. Keep it 1-2
-						sentences.`
-  },
-  {
-    name: "Service Item",
-    description: `Talk about the service with keywords people will be searching for it by. Keep it 1-2
-						sentences.`
-  }
-];
+};
 export {
-  URL as U,
-  cityAndState as a,
-  phone as b,
-  companyName as c,
-  email as e,
-  industry as i,
-  pages as p,
-  services as s
+  business as b
 };
