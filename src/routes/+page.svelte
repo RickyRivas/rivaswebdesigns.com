@@ -15,6 +15,7 @@
   let email
   let showModal = false
   let message
+  let swiperLaptop, swiperPhone
 
   onMount(() => {
     // Netlify blog invite redirect
@@ -23,36 +24,28 @@
       window.location = `/admin/#${urlSplit[1]}`
     }
 
-    const swiper = new Swiper(".portfolio-swiper-laptop", {
+    const swiperConfig = {
       slidesPerView: 1,
       spaceBetween: 0,
       speed: 500,
       centeredSlides: true,
       loop: true,
       navigation: {
-        prevEl: "#portfolio .swiper-prev",
-        nextEl: "#portfolio .swiper-next",
+        prevEl: ".devices-swiper-prev",
+        nextEl: ".devices-swiper-next",
       },
       autoplay: {
-        delay: 2500,
+        delay: 5000,
         disableOnInteraction: false,
       },
-    })
-    const swiperPhone = new Swiper(".portfolio-swiper-phone", {
-      slidesPerView: 1,
-      spaceBetween: 0,
-      speed: 500,
-      centeredSlides: true,
-      loop: true,
-      navigation: {
-        prevEl: "#portfolio .swiper-prev",
-        nextEl: "#portfolio .swiper-next",
-      },
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-    })
+    }
+
+    swiperLaptop = new Swiper(".portfolio-swiper-laptop", swiperConfig)
+    swiperPhone = new Swiper(".portfolio-swiper-phone", swiperConfig)
+
+    // sync sliders
+    swiperLaptop.controller.control = swiperPhone
+    swiperPhone.controller.control = swiperLaptop
   })
 </script>
 
@@ -142,129 +135,6 @@
             Submit</button>
         </div>
       </div>
-      <div class="video-container">
-        <svg
-          class="ipad-vector"
-          aria-hidden="true"
-          role="img"
-          xmlns="http://www.w3.org/2000/svg"
-          width="1298"
-          height="857"
-          viewBox="0 0 1298 857">
-          <path
-            fill="url(#a)"
-            d="M1239.02 0H58.988C26.408 0 0 26.418 0 59.01v738.98C0 830.582 26.408 857 58.988 857H1239.01c32.58 0 58.99-26.418 58.99-59.01V59.01C1298 26.418 1271.59 0 1239.01 0h.01Zm26.54 797.996c0 14.641-11.91 26.548-26.54 26.548H58.988c-14.635 0-26.538-11.907-26.538-26.548V59.01c0-14.64 11.903-26.548 26.538-26.548H1239.01c14.64 0 26.54 11.908 26.54 26.548v738.98l.01.006Z" />
-          <defs>
-            <linearGradient
-              id="a"
-              x1="1170.4"
-              x2="127.215"
-              y1="950.096"
-              y2="-92.697"
-              gradientUnits="userSpaceOnUse">
-              <stop />
-              <stop offset=".58" stop-color="#040101" />
-              <stop offset="1" stop-color="#0D0505" />
-            </linearGradient>
-          </defs>
-        </svg>
-
-        <div class="video-wrap">
-          <video id="herovid" preload="none" autoplay loop muted playsinline poster="">
-            <source type="video/mp4" src="/video/hero-video.mp4" />
-          </video>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <BizPartners />
-
-  <HomeServices />
-
-  <section id="home-feature">
-    <SubHeading text="Make more money" version="grey" />
-    <div class="container">
-      <div class="mod">
-        <h2>Improving online presences for small businesses since 2021</h2>
-        <p>
-          Your goals are our goals. We use web conversion funnels and the latest design trends to
-          turn your website browsers into paying customers. Our years of experience in the web
-          development industry allow us to deliver top-notch websites that look great and function
-          on any device from phones to desktops.
-        </p>
-        <a href="/" class="btn">Free Consultation</a>
-        <img
-          class="decor"
-          src="/laptop.svg"
-          alt="Laptop"
-          width="838"
-          height="470"
-          loading="lazy"
-          decoding="async"
-          fetchpriority="low" />
-      </div>
-
-      <div class="benefits">
-        <a href="/" class="item">
-          <div class="icon"></div>
-          <div class="inner-mod">
-            <h3>Get more clients</h3>
-            <p>
-              Elevate your business by reaching your target audience, converting them into customers
-              through effective SEO strategies, engaging content, precise PPC campaigns, and lead
-              management that yields high-quality leads.
-            </p>
-          </div>
-        </a>
-        <a href="/" class="item">
-          <div class="icon"></div>
-          <div class="inner-mod">
-            <h3>Grow your brand</h3>
-            <p>
-              We offer end-to-end marketing services that allow you to focus on your core business
-              while we manage all your marketing needs. Our comprehensive approach helps your brand
-              gain visibility and influence in your industry.
-            </p>
-          </div>
-        </a>
-        <a href="/" class="item">
-          <div class="icon"></div>
-          <div class="inner-mod">
-            <h3>Improve your reputation</h3>
-            <p>
-              Having a good online reputation is crucial as 90% of people rely on service reviews.
-              We can help you by increasing your reviews, registering in relevant directories, and
-              monitoring your online reputation.
-            </p>
-          </div>
-        </a>
-        <a href="/" class="item">
-          <div class="icon"></div>
-          <div class="inner-mod">
-            <h3>Increase Revenue</h3>
-            <p>
-              Our ROI-oriented approach, lead-generating content, and conversion strategies can help
-              your business achieve its goals and increase revenue every year.
-            </p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <div id="portfolio">
-    <SubHeading text="Selected works" />
-    <div class="container">
-      <div class="mod">
-        <h2>Some of our best work</h2>
-        <p>
-          Our portfolio pieces show how much detail, work, and passion we put into every project. We
-          welcome you to view our portfolio and feel free to send us a message about your own
-          project.
-        </p>
-      </div>
-
       <!-- Custom sliders -->
       <div class="devices-sliders">
         <!-- laptop -->
@@ -373,14 +243,136 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="swiper-controls">
-        <button class="btn swiper-prev">prev</button>
-        <button class="btn swiper-next">next</button>
+        <!-- controls -->
+        <div class="devices-swiper-controls">
+          <button class="devices-swiper-prev" aria-label="previous slide">
+            <svg
+              aria-hidden="true"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              width="50"
+              height="50"
+              fill="none"
+              viewBox="0 0 50 50">
+              <path
+                class="shape"
+                fill="currentcolor"
+                d="M31.32 25.39H21.042l3.654 3.654-1.098 1.116L18 24.562 23.598 19l1.098 1.116-3.672 3.654H31.32v1.62Z" />
+              <path
+                class="show"
+                stroke="currentcolor"
+                d="M49.5 25c0 13.531-10.969 24.5-24.5 24.5S.5 38.531.5 25 11.469.5 25 .5 49.5 11.469 49.5 25Z" />
+              <path
+                class="draw"
+                stroke="currentcolor"
+                stroke-width="1.5px"
+                d="M49.5 25c0 13.531-10.969 24.5-24.5 24.5S.5 38.531.5 25 11.469.5 25 .5 49.5 11.469 49.5 25Z" />
+            </svg>
+          </button>
+          <button class="devices-swiper-next" aria-label="next slide">
+            <svg
+              aria-hidden="true"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              width="50"
+              height="50"
+              fill="none"
+              viewBox="0 0 50 50">
+              <path
+                class="shape"
+                fill="currentcolor"
+                d="M18 25.39h10.278l-3.654 3.654 1.098 1.116 5.598-5.598L25.722 19l-1.098 1.116 3.672 3.654H18v1.62Z" />
+              <path
+                class="show"
+                stroke="currentcolor"
+                d="M49.5 25c0 13.531-10.969 24.5-24.5 24.5S.5 38.531.5 25 11.469.5 25 .5 49.5 11.469 49.5 25Z" />
+              <path
+                class="draw"
+                stroke-width="1.5px"
+                stroke="currentcolor"
+                d="M49.5 25c0 13.531-10.969 24.5-24.5 24.5S.5 38.531.5 25 11.469.5 25 .5 49.5 11.469 49.5 25Z" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <BizPartners />
+
+  <HomeServices />
+
+  <section id="home-feature">
+    <SubHeading text="Make more money" version="grey" />
+    <div class="container">
+      <div class="mod">
+        <h2>Improving online presences for small businesses since 2021</h2>
+        <p>
+          Your goals are our goals. We use web conversion funnels and the latest design trends to
+          turn your website browsers into paying customers. Our years of experience in the web
+          development industry allow us to deliver top-notch websites that look great and function
+          on any device from phones to desktops.
+        </p>
+        <a href="/" class="btn">Free Consultation</a>
+        <img
+          class="decor"
+          src="/laptop.svg"
+          alt="Laptop"
+          width="838"
+          height="470"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low" />
+      </div>
+
+      <div class="benefits">
+        <a href="/" class="item">
+          <div class="icon"></div>
+          <div class="inner-mod">
+            <h3>Get more clients</h3>
+            <p>
+              Elevate your business by reaching your target audience, converting them into customers
+              through effective SEO strategies, engaging content, precise PPC campaigns, and lead
+              management that yields high-quality leads.
+            </p>
+          </div>
+        </a>
+        <a href="/" class="item">
+          <div class="icon"></div>
+          <div class="inner-mod">
+            <h3>Grow your brand</h3>
+            <p>
+              We offer end-to-end marketing services that allow you to focus on your core business
+              while we manage all your marketing needs. Our comprehensive approach helps your brand
+              gain visibility and influence in your industry.
+            </p>
+          </div>
+        </a>
+        <a href="/" class="item">
+          <div class="icon"></div>
+          <div class="inner-mod">
+            <h3>Improve your reputation</h3>
+            <p>
+              Having a good online reputation is crucial as 90% of people rely on service reviews.
+              We can help you by increasing your reviews, registering in relevant directories, and
+              monitoring your online reputation.
+            </p>
+          </div>
+        </a>
+        <a href="/" class="item">
+          <div class="icon"></div>
+          <div class="inner-mod">
+            <h3>Increase Revenue</h3>
+            <p>
+              Our ROI-oriented approach, lead-generating content, and conversion strategies can help
+              your business achieve its goals and increase revenue every year.
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <HomeAbout />
 </main>

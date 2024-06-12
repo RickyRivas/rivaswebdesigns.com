@@ -73,30 +73,126 @@
         }
     }
 
-    .video-container {
-        display: block;
+    .devices-sliders {
         position: relative;
-        overflow: hidden;
-        width: 100%;
-        max-width: (1298/20em);
-        height: auto;
-        line-height: 0;
-        filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, .3));
+        margin-bottom: (50/20em);
+        font-size: ~"min(2.1vw, 1em)";
+        display: block;
 
-        .ipad-vector {
-            position: relative;
-            z-index: 1;
+        .device-vector {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 777;
+            width: 100%;
+            height: auto;
+            pointer-events: none;
         }
 
-        .video-wrap {
-            overflow: hidden;
-            .overlay;
-            border-radius: 8%;
+        .swiper {
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
 
-            #herovid {
-                aspect-ratio: 16 / 9;
-                .overlay;
-                object-fit: cover;
+        .laptop {
+            .ib;
+            .va(top);
+            width: (838/20em);
+            height: (470/20em);
+            position: relative;
+            padding-top: .25em;
+
+            .portfolio-swiper-laptop {
+                display: block;
+                width: (660/20em);
+                height: (435/20em);
+                border-radius: .5em;
+            }
+        }
+
+        .phone {
+            display: block;
+            width: (150/20em);
+            height: (284/20em);
+            position: absolute;
+            top: (210/20em);
+            left: calc(50% + 12em);
+            z-index: 777;
+
+            .portfolio-swiper-phone {
+                display: block;
+                background-color: #212121;
+                width: (150/20em);
+                height: (284/20em);
+                border-radius: 1em;
+            }
+        }
+    }
+
+    .devices-swiper-controls {
+        text-align: center;
+
+        button {
+            .ib;
+            .va(top);
+            background: none;
+            padding: 0;
+            margin: 2em 0 0;
+            line-height: 0;
+            border: 0;
+            width: 50px;
+            height: 50px;
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            background-color: var(--primary-light);
+            border-radius: 50%;
+
+            @media only screen and (min-width: 1024px) {
+                position: absolute;
+                top: 50%;
+                margin: 0;
+
+                &.devices-swiper-prev {
+                    left: 0;
+                }
+
+                &.devices-swiper-next {
+                    right: 0;
+                }
+            }
+
+            svg {
+                path {
+                    transition: stroke-dashoffset .33s ease;
+                }
+
+                .shape {
+                    color: var(--text);
+                }
+
+                .show {
+                    color: var(--light-grey);
+                }
+
+                .draw {
+                    stroke-dashoffset: 154;
+                    stroke-dasharray: 154;
+                    color: var(--primary);
+                }
+            }
+
+            &:hover {
+                svg {
+                    .draw {
+                        stroke-dashoffset: 0;
+                    }
+
+                    .show {
+                        stroke-dashoffset: 154;
+                    }
+                }
             }
         }
     }
@@ -496,90 +592,6 @@
 
         p {
             font-size: (16/20em);
-        }
-    }
-}
-
-#portfolio {
-    display: block;
-    position: relative;
-    padding: 3em 0;
-    z-index: 77;
-    text-align: center;
-
-    @media only screen and (min-width: 768px) {
-        font-size: 1.7vw;
-    }
-
-    @media only screen and (min-width: 1024px) {
-        font-size: inherit;
-        padding: 5em 0;
-    }
-
-    .mod {
-        text-align: left
-    }
-
-    .devices-sliders {
-        position: relative;
-        margin-bottom: (50/20em);
-        font-size: ~"min(2.1vw, 1em)";
-
-        .ib;
-        .va(top);
-
-        .device-vector {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 777;
-            width: 100%;
-            height: auto;
-            pointer-events: none;
-        }
-
-        .swiper {
-            img {
-                width: 100%;
-                height: auto;
-            }
-        }
-
-        .swiper-controls {
-            text-align: center;
-        }
-    }
-
-    .laptop {
-        display: block;
-        width: (838/20em);
-        height: (470/20em);
-        position: relative;
-        padding-top: .25em;
-
-        .portfolio-swiper-laptop {
-            display: block;
-            width: (660/20em);
-            height: (435/20em);
-            border-radius: .5em;
-        }
-    }
-
-    .phone {
-        display: block;
-        width: (150/20em);
-        height: (284/20em);
-        position: absolute;
-        bottom: (-25/20em);
-        left: calc(50% + 12em);
-        z-index: 777;
-
-        .portfolio-swiper-phone {
-            display: block;
-            background-color: #212121;
-            width: (150/20em);
-            height: (284/20em);
-            border-radius: 1em;
         }
     }
 }
