@@ -9,19 +9,23 @@
 
 <footer>
   <div class="container">
-    <div class="item">
-      <a href="/" class="logo">
-        <Logo />
-        <p class="slogan">
-          INK Bros is Tulsa's choice for custom apparel services, specializing in top-notch screen
-          printing, embroidery, and more to bring your unique designs to life.
-        </p>
-      </a>
-    </div>
-    <div class="wrap">
-      <!-- Divider -->
+    <!-- TOP -->
+    <a href="mailto:{business.email}" class="email">{business.email}</a>
+
+    <!-- MID -->
+    <div class="mid">
       <div class="item">
-        <h2>Sitemap</h2>
+        <a class="logo" href="/">
+          <Logo />
+        </a>
+        <p>
+          Modern, hand-coded, and blazing fast websites that deliver premium results for an
+          affordable price.
+        </p>
+        <a href="/" class="btn">Contact us</a>
+      </div>
+      <div class="item">
+        <h2>Menu</h2>
         <ul>
           <!-- pages controled by site config-->
           <li class="link">
@@ -42,54 +46,27 @@
           {/if}
         </ul>
       </div>
-      <!-- Divider -->
       <div class="item">
-        <h2>Services</h2>
+        <h2>Socials</h2>
         <ul>
-          <li>
-            <a href="/services">Service Item</a>
-          </li>
-          <li>
-            <a href="/services">Service Item</a>
-          </li>
-          <li>
-            <a href="/services">Service Item</a>
-          </li>
-          <li>
-            <a href="/services">Service Item</a>
-          </li>
-          <li>
-            <a href="/services">Service Item</a>
-          </li>
-        </ul>
-      </div>
-      <!-- Divider -->
-      <div class="item">
-        <h2>Contact</h2>
-        <ul>
-          <li>
-            <a class="mail" href="mailto:{business.email}">Email: {business.email}</a>
-          </li>
-          <li>
-            <a
-              href="tel:{business.phone
-                .replace('(', '')
-                .replace(')', '')
-                .replace('-', '')
-                .replace(' ', '')}">
-              <span>Phone: </span>{business.phone}</a>
-          </li>
-          <li>
-            <SocialMedia />
-          </li>
+          {#each Object.entries(business.socials) as [key, value]}
+            {#if value !== "/"}
+              <li>
+                <a href="/{value}" target="_blank">
+                  <span class="screenreader">follow us on</span>
+                  {key}</a>
+              </li>
+            {/if}
+          {/each}
         </ul>
       </div>
     </div>
-  </div>
 
-  <p class="credit">
-    <Copyright>
-      {business.name}
-    </Copyright>
-  </p>
+    <div class="credit">
+      <div class="copyright">
+        <Copyright />
+      </div>
+      <p>Based in Tulsa, Oklahoma</p>
+    </div>
+  </div>
 </footer>

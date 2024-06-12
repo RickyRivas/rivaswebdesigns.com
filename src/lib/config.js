@@ -6,7 +6,7 @@ export const business = {
     ogImage: '',
     phone: '(918) 123-4567',
     address: '1234 East Tulsa, Ok 12345',
-    email: 'biz@email.com',
+    email: 'info@rivaswebdesigns.com',
     // Set to true if client opts for blog
     includeBlog: true,
     homepage: {
@@ -52,10 +52,10 @@ export const business = {
         sunday: 'Closed',
     },
     socials: {
-        facebook: '/',
+        facebook: 'https://www.facebook.com/rivaswebdesigns',
         instagram: '/',
         xTwitter: '/',
         youtube: '/',
-        google: '/'
+        google: 'https://goo.gl/maps/mc8AhywjNL8WYkFv8'
     }
 }
