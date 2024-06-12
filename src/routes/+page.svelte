@@ -22,8 +22,43 @@
       var urlSplit = document.URL.split("#")
       window.location = `/admin/#${urlSplit[1]}`
     }
+
+    const swiper = new Swiper(".portfolio-swiper-laptop", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      speed: 500,
+      centeredSlides: true,
+      loop: true,
+      navigation: {
+        prevEl: "#portfolio .swiper-prev",
+        nextEl: "#portfolio .swiper-next",
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+    })
+    const swiperPhone = new Swiper(".portfolio-swiper-phone", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      speed: 500,
+      centeredSlides: true,
+      loop: true,
+      navigation: {
+        prevEl: "#portfolio .swiper-prev",
+        nextEl: "#portfolio .swiper-next",
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+    })
   })
 </script>
+
+<svelte:head>
+  <script src="/scripts/swiper.min.js"></script>
+</svelte:head>
 
 <SEO
   title="{business.name} | {business.industry} | {business.cityAndState}"
@@ -217,6 +252,135 @@
       </div>
     </div>
   </section>
+
+  <div id="portfolio">
+    <SubHeading text="Selected works" />
+    <div class="container">
+      <div class="mod">
+        <h2>Some of our best work</h2>
+        <p>
+          Our portfolio pieces show how much detail, work, and passion we put into every project. We
+          welcome you to view our portfolio and feel free to send us a message about your own
+          project.
+        </p>
+      </div>
+
+      <!-- Custom sliders -->
+      <div class="devices-sliders">
+        <!-- laptop -->
+        <div class="laptop">
+          <!-- Img -->
+          <img
+            class="device-vector"
+            src="/laptop.svg"
+            alt="Laptop"
+            width="838"
+            height="470"
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low" />
+
+          <!-- Swiper -->
+          <div class="swiper portfolio-swiper-laptop">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  class=""
+                  src="/portfolio/inkbro-slide.jpg"
+                  alt=""
+                  width="660"
+                  height="435"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low" />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class=""
+                  src="/portfolio/inkbro-slide.jpg"
+                  alt=""
+                  width="660"
+                  height="435"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low" />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class=""
+                  src="/portfolio/inkbro-slide.jpg"
+                  alt=""
+                  width="660"
+                  height="435"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- phone -->
+        <div class="phone">
+          <svg
+            class="device-vector"
+            xmlns="http://www.w3.org/2000/svg"
+            width="150"
+            height="284"
+            fill="none"
+            viewBox="0 0 150 284">
+            <path
+              fill="#333"
+              fill-rule="evenodd"
+              d="M19.195 0h111.611C141.406 0 150 8.594 150 19.195v245.569c0 10.601-8.594 19.194-19.194 19.194H19.194C8.595 283.958 0 275.365 0 264.764V19.194C0 8.595 8.594 0 19.195 0Zm122.637 264.764V19.2c0-6.088-4.944-11.032-11.032-11.032H19.2c-6.088 0-11.032 4.944-11.032 11.032v245.558c0 6.088 4.944 11.032 11.032 11.032h111.606c6.082 0 11.026-4.938 11.026-11.026Z"
+              clip-rule="evenodd" />
+          </svg>
+          <div class="swiper portfolio-swiper-phone">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  class=""
+                  src="/portfolio/inkbro-phone.jpg"
+                  alt=""
+                  width="180"
+                  height="284"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low" />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class=""
+                  src="/portfolio/inkbro-phone.jpg"
+                  alt=""
+                  width="180"
+                  height="284"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low" />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class=""
+                  src="/portfolio/inkbro-phone.jpg"
+                  alt=""
+                  width="180"
+                  height="284"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-controls">
+        <button class="btn swiper-prev">prev</button>
+        <button class="btn swiper-next">next</button>
+      </div>
+    </div>
+  </div>
 
   <HomeAbout />
 </main>

@@ -499,3 +499,87 @@
         }
     }
 }
+
+#portfolio {
+    display: block;
+    position: relative;
+    padding: 3em 0;
+    z-index: 77;
+    text-align: center;
+
+    @media only screen and (min-width: 768px) {
+        font-size: 1.7vw;
+    }
+
+    @media only screen and (min-width: 1024px) {
+        font-size: inherit;
+        padding: 5em 0;
+    }
+
+    .mod {
+        text-align: left
+    }
+
+    .devices-sliders {
+        position: relative;
+        margin-bottom: (50/20em);
+        font-size: ~"min(2.1vw, 1em)";
+
+        .ib;
+        .va(top);
+
+        .device-vector {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 777;
+            width: 100%;
+            height: auto;
+            pointer-events: none;
+        }
+
+        .swiper {
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .swiper-controls {
+            text-align: center;
+        }
+    }
+
+    .laptop {
+        display: block;
+        width: (838/20em);
+        height: (470/20em);
+        position: relative;
+        padding-top: .25em;
+
+        .portfolio-swiper-laptop {
+            display: block;
+            width: (660/20em);
+            height: (435/20em);
+            border-radius: .5em;
+        }
+    }
+
+    .phone {
+        display: block;
+        width: (150/20em);
+        height: (284/20em);
+        position: absolute;
+        bottom: (-25/20em);
+        left: calc(50% + 12em);
+        z-index: 777;
+
+        .portfolio-swiper-phone {
+            display: block;
+            background-color: #212121;
+            width: (150/20em);
+            height: (284/20em);
+            border-radius: 1em;
+        }
+    }
+}
