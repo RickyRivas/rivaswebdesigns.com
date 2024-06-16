@@ -22,7 +22,6 @@
         font-size: min(8vw, (@fs/20em));
         line-height: (@lh/@fs);
         margin-bottom: (@marginbtm/@fs*1em);
-        .bold;
     }
 
     .landing-form {
@@ -225,6 +224,7 @@
         .flexcenter;
         white-space: nowrap;
         text-transform: capitalize;
+        .reg;
 
         .flag {
             .ib;
@@ -467,59 +467,6 @@
         display: block;
         text-align: left;
         max-width: (800/20em);
-
-        .decor {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .btn {
-            margin-bottom: 3em;
-        }
-    }
-
-    .benefits {
-        display: inline-flex;
-        .va(top);
-        max-width: (440/20em);
-        text-align: left;
-        flex-direction: column;
-        gap: (20/20em);
-
-        @media only screen and (min-width: 768px) {
-            margin-top: (95/20em);
-        }
-
-        a {
-            color: var(--text);
-            display: flex;
-            gap: 1em;
-            background-color: var(--bg);
-            padding: .5em;
-
-            h3 {
-                font-size: (15/20em);
-                line-height: (25/15);
-            }
-
-            p {
-                font-size: (13/20em);
-                margin: 0;
-            }
-
-            .icon {
-                display: block;
-                width: (80/20em);
-                height: (80/20em);
-                background-color: var(--bg-alternate);
-            }
-
-            .inner-mod {
-                display: block;
-                width: 80%;
-            }
-        }
     }
 }
 

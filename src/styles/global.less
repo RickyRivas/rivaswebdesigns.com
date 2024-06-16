@@ -5,35 +5,45 @@
     margin: 0;
 }
 
-/* Mona Sans */
+/* Helvetica Now Display */
 @font-face {
-    font-family: 'Mona Sans';
+    font-family: 'Helvetica Now Display';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: local(''),
+        url('/fonts/HelveticaNowDisplay-Light.woff2') format('woff2'),
+        url('/fonts/HelveticaNowDisplay-Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Helvetica Now Display';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
     src: local(''),
-        url('/fonts/Mona-Sans-Regular.woff2') format('woff2'),
-        url('/fonts/Mona-Sans-Regular.woff') format('woff');
+        url('/fonts/HelveticaNowDisplay-Regular.woff2') format('woff2'),
+        url('/fonts/HelveticaNowDisplay-Regular.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Mona Sans';
+    font-family: 'Helvetica Now Display';
     font-style: normal;
     font-weight: 500;
     font-display: swap;
     src: local(''),
-        url('/fonts/Mona-Sans-Medium.woff2') format('woff2'),
-        url('/fonts/Mona-Sans-Medium.woff') format('woff');
+        url('/fonts/HelveticaNowDisplay-Medium.woff2') format('woff2'),
+        url('/fonts/HelveticaNowDisplay-Medium.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Mona Sans';
+    font-family: 'Helvetica Now Display';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     font-display: swap;
     src: local(''),
-        url('/fonts/Mona-Sans-SemiBold.woff2') format('woff2'),
-        url('/fonts/Mona-Sans-SemiBold.woff') format('woff');
+        url('/fonts/HelveticaNowDisplay-Bold.woff2') format('woff2'),
+        url('/fonts/HelveticaNowDisplay-Bold.woff') format('woff');
 }
 
 // default theme css vars
@@ -79,7 +89,7 @@ html {
 }
 
 body {
-    font-family: 'Mona Sans';
+    font-family: 'Helvetica Now Display';
     font-size: 16px;
     overflow: hidden;
     display: block;
@@ -186,6 +196,7 @@ h6 {
     margin: 0 0 (40/@h2fs)*1em;
     text-rendering: auto;
     text-transform: capitalize;
+    font-weight: 500;
 }
 
 h2:not(.topic) {

@@ -304,72 +304,17 @@
   <HomeServices />
 
   <section id="home-feature">
-    <SubHeading text="Make more money" version="grey" />
+    <SubHeading text="Our Subscription" version="grey" />
     <div class="container">
       <div class="mod">
-        <h2>Improving online presences for small businesses since 2021</h2>
+        <h2>Our complete Subscription Solution Designed for Small Businesses</h2>
         <p>
-          Your goals are our goals. We use web conversion funnels and the latest design trends to
-          turn your website browsers into paying customers. Our years of experience in the web
-          development industry allow us to deliver top-notch websites that look great and function
-          on any device from phones to desktops.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. A, nobis. Soluta laborum
+          recusandae saepe at optio? Blanditiis totam repellat quis nisi consequatur, iure sit
+          necessitatibus tempora consequuntur exercitationem quidem accusamus ratione illum debitis
+          soluta ab voluptate. At consequatur ex dignissimos nesciunt dolores porro libero dicta
+          natus eligendi, voluptates voluptas totam!
         </p>
-        <a href="/" class="btn">Free Consultation</a>
-        <img
-          class="decor"
-          src="/laptop.svg"
-          alt="Laptop"
-          width="838"
-          height="470"
-          loading="lazy"
-          decoding="async"
-          fetchpriority="low" />
-      </div>
-
-      <div class="benefits">
-        <a href="/" class="item">
-          <div class="icon"></div>
-          <div class="inner-mod">
-            <h3>Get more clients</h3>
-            <p>
-              Elevate your business by reaching your target audience, converting them into customers
-              through effective SEO strategies, engaging content, precise PPC campaigns, and lead
-              management that yields high-quality leads.
-            </p>
-          </div>
-        </a>
-        <a href="/" class="item">
-          <div class="icon"></div>
-          <div class="inner-mod">
-            <h3>Grow your brand</h3>
-            <p>
-              We offer end-to-end marketing services that allow you to focus on your core business
-              while we manage all your marketing needs. Our comprehensive approach helps your brand
-              gain visibility and influence in your industry.
-            </p>
-          </div>
-        </a>
-        <a href="/" class="item">
-          <div class="icon"></div>
-          <div class="inner-mod">
-            <h3>Improve your reputation</h3>
-            <p>
-              Having a good online reputation is crucial as 90% of people rely on service reviews.
-              We can help you by increasing your reviews, registering in relevant directories, and
-              monitoring your online reputation.
-            </p>
-          </div>
-        </a>
-        <a href="/" class="item">
-          <div class="icon"></div>
-          <div class="inner-mod">
-            <h3>Increase Revenue</h3>
-            <p>
-              Our ROI-oriented approach, lead-generating content, and conversion strategies can help
-              your business achieve its goals and increase revenue every year.
-            </p>
-          </div>
-        </a>
       </div>
     </div>
   </section>

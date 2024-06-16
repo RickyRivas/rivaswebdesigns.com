@@ -52,10 +52,10 @@ export const business = {
         sunday: 'Closed',
     },
     socials: {
-        facebook: 'https://www.facebook.com/rivaswebdesigns',
+        Facebook: 'https://www.facebook.com/rivaswebdesigns',
         instagram: '/',
         xTwitter: '/',
         youtube: '/',
-        google: 'https://goo.gl/maps/mc8AhywjNL8WYkFv8'
+        Google: 'https://goo.gl/maps/mc8AhywjNL8WYkFv8'
     }
 }

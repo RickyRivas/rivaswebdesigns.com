@@ -262,29 +262,34 @@
     }
 
     form.theme-toggle {
-        @square: 20px;
         .ib;
         .va(middle);
-        width: (@square);
-        height: (@square);
-        cursor: pointer;
+
         position: relative;
         z-index: 5;
+        .lh(0);
         margin: 0 1em 0 0;
 
         @media only screen and (min-width: 1024px) {
-            margin: 0 0 0 1em;
+            margin: 0 0 0 .4em;
         }
 
-
         button {
+            @square: 40px;
+
+            width: (@square);
+            height: (@square);
             border: 0;
             padding: 0;
             margin: 0;
             line-height: 0;
             color: var(--text);
             background: none;
-            transition: color .33s ease;
+            transition: color .33s ease,
+                background-color .33s ease;
+            padding: 10px;
+            border-radius: .25em;
+            cursor: pointer;
 
             svg {
                 path {
@@ -316,6 +321,10 @@
                     opacity: 1;
                     transform: rotate(0deg);
                 }
+            }
+
+            &:hover {
+                background-color: var(--primary-light);
             }
         }
     }
