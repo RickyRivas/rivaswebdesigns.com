@@ -16,7 +16,7 @@
         background-color: var(--mainnav-bg);
         pointer-events: none;
         z-index: 3;
-        border-bottom: .5px solid var(--text);
+        // border-bottom: .5px solid var(--text);
         transition: background-color .33s ease,
             backdrop-filter .33s ease,
             box-shadow .33s ease;
@@ -36,22 +36,24 @@
         transform: translateX(calc(100%));
     }
 
-    &.active {
+    @media only screen and (max-width: 1023px) {
+        &.active {
 
-        #logo svg {
-            color: #fff;
-        }
+            #logo svg {
+                color: #fff;
+            }
 
-        &::before {
-            backdrop-filter: none;
-            box-shadow: none;
-            background-color: var(--primary);
-        }
+            &::before {
+                backdrop-filter: none;
+                box-shadow: none;
+                background-color: var(--primary);
+            }
 
-        &::after {
-            transform: translateX(0);
-            opacity: 1;
-            pointer-events: all;
+            &::after {
+                transform: translateX(0);
+                opacity: 1;
+                pointer-events: all;
+            }
         }
     }
 
@@ -70,6 +72,21 @@
         align-items: center;
         justify-content: space-between;
         width: calc(100% - 1em);
+    }
+
+    &>.container {
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            z-index: 3000;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            pointer-events: none;
+        }
     }
 
     // Logo

@@ -1,6 +1,4 @@
 <script>
-  import UsFlag from "./../icons/UsFlag.svelte"
-  import TulsaFlag from "./../icons/TulsaFlag.svelte"
   import { onMount } from "svelte"
   import SubHeading from "$lib/components/SubHeading.svelte"
   let leftLax, rightLax
@@ -40,7 +38,15 @@
   <div class="row" bind:this={leftLax}>
     <div class="item">ink bros custom apparel</div>
     <div class="item">
-      <TulsaFlag />
+      <img
+        class="flag"
+        src="/tulsaflag.svg"
+        alt=""
+        width="100"
+        height="67"
+        loading="lazy"
+        decoding="async"
+        fetchpriority="low" />
     </div>
     <div class="item">jefes mexican restaurant</div>
   </div>
@@ -48,7 +54,15 @@
   <div class="row" bind:this={rightLax}>
     <div class="item">sesame communications</div>
     <div class="item">
-      <UsFlag />
+      <img
+        class="flag"
+        src="/usflag.svg"
+        alt=""
+        width="100"
+        height="67"
+        loading="lazy"
+        decoding="async"
+        fetchpriority="low" />
     </div>
     <div class="item" style="--index: 4">the recyclement</div>
   </div>
