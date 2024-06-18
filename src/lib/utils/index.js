@@ -29,8 +29,6 @@ export const fetchMarkdownPosts = async () => {
     return posts.sort((a, b) => Date.parse(b.postData.date) - Date.parse(a.postData.date))
 };
 
-
-// https://github.com/maciekgrzybek/svelte-inview
 export function addClassInView(el, classToToggle, threshold) {
     // threshold must be between 0 & 1
     new inview(el, { threshold })

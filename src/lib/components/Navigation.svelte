@@ -29,7 +29,12 @@
 <nav id="mainnav" class:active={isActive} class={y >= 100 ? "scroll" : ""}>
   <div class="container">
     <!-- Logo -->
-    <a id="logo" href="/">
+    <a
+      id="logo"
+      href="/"
+      on:click={() => {
+        if (isActive) isActive = false
+      }}>
       <LogoVector />
     </a>
 

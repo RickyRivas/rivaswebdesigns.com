@@ -52,7 +52,7 @@
     --primary: #8A1A23;
     --primary-light: #8a1a230d;
     --secondary: #033B52;
-    --light-grey: #ccc;
+    --light-grey: rgba(0, 0, 0, .1);
     // text
     --heading: #212121;
     --text: #333;
@@ -66,12 +66,16 @@
     --mainnav-bg: #ffffffb3;
     --mainnav-link: var(--primary);
     --mainnav-linkbg: var(--primary-light);
+    // padding
+    --padding-sm: 3em 0;
+    --padding-lg: 5em 0;
 }
 
 // Dark theme css vars
 html[data-theme='dark'] {
     // colors
     --primary: rgb(73, 2, 2);
+    --light-grey: rgba(256, 256, 256, .1);
     // text
     --heading: #fff;
     --text: #fff;

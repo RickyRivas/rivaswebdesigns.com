@@ -16,7 +16,7 @@
         background-color: var(--mainnav-bg);
         pointer-events: none;
         z-index: 3;
-        // border-bottom: .5px solid var(--text);
+        border-bottom: 1px solid var(--light-grey);
         transition: background-color .33s ease,
             backdrop-filter .33s ease,
             box-shadow .33s ease;
@@ -38,6 +38,11 @@
 
     @media only screen and (max-width: 1023px) {
         &.active {
+            .theme-toggle {
+                button {
+                    color: #fff;
+                }
+            }
 
             #logo svg {
                 color: #fff;
@@ -72,21 +77,6 @@
         align-items: center;
         justify-content: space-between;
         width: calc(100% - 1em);
-    }
-
-    &>.container {
-
-        &::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            z-index: 3000;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
-            pointer-events: none;
-        }
     }
 
     // Logo
@@ -285,7 +275,7 @@
         position: relative;
         z-index: 5;
         .lh(0);
-        margin: 0 1em 0 0;
+        margin: 0 .4em 0 0;
 
         @media only screen and (min-width: 1024px) {
             margin: 0 0 0 .4em;

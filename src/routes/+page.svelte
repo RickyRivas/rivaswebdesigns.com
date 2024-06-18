@@ -266,6 +266,81 @@
           natus eligendi, voluptates voluptas totam!
         </p>
       </div>
+
+      <div class="items">
+        <div class="item">
+          <h3>5 pages with a contact form</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia deserunt, delectus non
+            vero voluptatibus consequatur!
+          </p>
+        </div>
+        <div class="item">
+          <h3>SEO & Performance</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia deserunt, delectus non
+            vero voluptatibus consequatur!
+          </p>
+        </div>
+        <div class="item">
+          <h3>hosting, unlimited edits, and 24/7 support</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia deserunt, delectus non
+            vero voluptatibus consequatur!
+          </p>
+        </div>
+        <div class="item">
+          <h3>Zero limits to our designs. Dark mode included on all websites.</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia deserunt, delectus non
+            vero voluptatibus consequatur!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <SubHeading text="The big question" version="blue" />
+    <div class="container">
+      <div class="mod">
+        <h2>Why should you choose us?</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit ullam impedit adipisci
+          vitae et labore dolore ipsam temporibus reiciendis! Eius omnis corrupti similique! Nisi
+          eveniet perferendis fuga eligendi saepe deleniti blanditiis praesentium possimus laborum
+          earum culpa doloremque, vero explicabo voluptate quidem asperiores facilis fugiat in?
+          Deserunt numquam quas sit voluptas?
+        </p>
+        <a href="/" class="btn">contact us</a>
+      </div>
+
+      <div class="decor">
+        <div class="item">
+          <h3 class="topic">
+            <span class="trait">777</span>
+            Lorem ipsum dolor sit amet.
+          </h3>
+        </div>
+        <div class="item">
+          <h3 class="topic">
+            <span class="trait">777</span>
+            Lorem ipsum dolor sit amet.
+          </h3>
+        </div>
+        <div class="item">
+          <h3 class="topic">
+            <span class="trait">777</span>
+            Lorem ipsum dolor sit amet.
+          </h3>
+        </div>
+        <div class="item">
+          <h3 class="topic">
+            <span class="trait">777</span>
+            Lorem ipsum dolor sit amet.
+          </h3>
+        </div>
+      </div>
     </div>
   </section>
 
