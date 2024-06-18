@@ -44,7 +44,7 @@
 
     text {
       fill: white;
-      font-family: "Mona Sans";
+      // font-family: "Mona Sans";
       font-weight: 400;
       font-size: (9/20em);
       line-height: 1;

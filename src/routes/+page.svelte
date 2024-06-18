@@ -1,6 +1,8 @@
 <script>
   // components
   import SEO from "./../lib/components/SEO.svelte"
+  import { register } from "swiper/element/bundle"
+  import { addClassInView, removeClassInView } from "$lib/utils"
 
   // stores
   import { business } from "$lib/config"
@@ -15,7 +17,23 @@
   let email
   let showModal = false
   let message
-  let swiperLaptop, swiperPhone
+  let featureSection
+
+  // swiper
+  // register swiper web components
+  register()
+  let phoneSwiper, laptopSwiper, devicesSwiperControlLeft, devicesSwiperControlRight
+  const laptopSwiperSlides = [
+    { src: "/portfolio/inkbro-slide.jpg", width: "660", height: "435", alt: "" },
+    { src: "/portfolio/inkbro-slide.jpg", width: "660", height: "435", alt: "" },
+    { src: "/portfolio/inkbro-slide.jpg", width: "660", height: "435", alt: "" },
+  ]
+
+  const phoneSwiperSlides = [
+    { src: "/portfolio/inkbro-phone.jpg", width: "180", height: "284", alt: "" },
+    { src: "/portfolio/inkbro-phone.jpg", width: "180", height: "284", alt: "" },
+    { src: "/portfolio/inkbro-phone.jpg", width: "180", height: "284", alt: "" },
+  ]
 
   onMount(() => {
     // Netlify blog invite redirect
@@ -24,34 +42,15 @@
       window.location = `/admin/#${urlSplit[1]}`
     }
 
-    const swiperConfig = {
-      slidesPerView: 1,
-      spaceBetween: 0,
-      speed: 500,
-      centeredSlides: true,
-      loop: true,
-      navigation: {
-        prevEl: ".devices-swiper-prev",
-        nextEl: ".devices-swiper-next",
-      },
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-    }
+    // initialize on mount so swiper web component can be able to query select the controls
+    laptopSwiper.initialize()
+    phoneSwiper.initialize()
 
-    swiperLaptop = new Swiper(".portfolio-swiper-laptop", swiperConfig)
-    swiperPhone = new Swiper(".portfolio-swiper-phone", swiperConfig)
-
-    // sync sliders
-    swiperLaptop.controller.control = swiperPhone
-    swiperPhone.controller.control = swiperLaptop
+    // sync slideshows
+    laptopSwiper.swiper.controller.control = phoneSwiper.swiper
+    phoneSwiper.swiper.controller.control = laptopSwiper.swiper
   })
 </script>
-
-<svelte:head>
-  <script src="/scripts/swiper.min.js"></script>
-</svelte:head>
 
 <SEO
   title="{business.name} | {business.industry} | {business.cityAndState}"
@@ -151,43 +150,18 @@
             fetchpriority="low" />
 
           <!-- Swiper -->
-          <div class="swiper portfolio-swiper-laptop">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  class=""
-                  src="/portfolio/inkbro-slide.jpg"
-                  alt=""
-                  width="660"
-                  height="435"
-                  loading="lazy"
-                  decoding="async"
-                  fetchpriority="low" />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  class=""
-                  src="/portfolio/inkbro-slide.jpg"
-                  alt=""
-                  width="660"
-                  height="435"
-                  loading="lazy"
-                  decoding="async"
-                  fetchpriority="low" />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  class=""
-                  src="/portfolio/inkbro-slide.jpg"
-                  alt=""
-                  width="660"
-                  height="435"
-                  loading="lazy"
-                  decoding="async"
-                  fetchpriority="low" />
-              </div>
-            </div>
-          </div>
+          <swiper-container
+            bind:this={laptopSwiper}
+            init="false"
+            class="laptop-swiper"
+            loop="true"
+            navigation={{ prevEl: ".devices-swiper-prev", nextEl: ".devices-swiper-next" }}>
+            {#each laptopSwiperSlides as { src, width, height, alt }}
+              <swiper-slide>
+                <img {src} {alt} {width} {height} decoding="async" fetchpriority="high" />
+              </swiper-slide>
+            {/each}
+          </swiper-container>
         </div>
 
         <!-- phone -->
@@ -205,48 +179,21 @@
               d="M19.195 0h111.611C141.406 0 150 8.594 150 19.195v245.569c0 10.601-8.594 19.194-19.194 19.194H19.194C8.595 283.958 0 275.365 0 264.764V19.194C0 8.595 8.594 0 19.195 0Zm122.637 264.764V19.2c0-6.088-4.944-11.032-11.032-11.032H19.2c-6.088 0-11.032 4.944-11.032 11.032v245.558c0 6.088 4.944 11.032 11.032 11.032h111.606c6.082 0 11.026-4.938 11.026-11.026Z"
               clip-rule="evenodd" />
           </svg>
-          <div class="swiper portfolio-swiper-phone">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  class=""
-                  src="/portfolio/inkbro-phone.jpg"
-                  alt=""
-                  width="180"
-                  height="284"
-                  loading="lazy"
-                  decoding="async"
-                  fetchpriority="low" />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  class=""
-                  src="/portfolio/inkbro-phone.jpg"
-                  alt=""
-                  width="180"
-                  height="284"
-                  loading="lazy"
-                  decoding="async"
-                  fetchpriority="low" />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  class=""
-                  src="/portfolio/inkbro-phone.jpg"
-                  alt=""
-                  width="180"
-                  height="284"
-                  loading="lazy"
-                  decoding="async"
-                  fetchpriority="low" />
-              </div>
-            </div>
-          </div>
+          <swiper-container bind:this={phoneSwiper} init="false" class=".phone-swiper" loop="true">
+            {#each phoneSwiperSlides as { src, width, height, alt }}
+              <swiper-slide>
+                <img {src} {alt} {width} {height} decoding="async" fetchpriority="high" />
+              </swiper-slide>
+            {/each}
+          </swiper-container>
         </div>
 
         <!-- controls -->
         <div class="devices-swiper-controls">
-          <button class="devices-swiper-prev" aria-label="previous slide">
+          <button
+            class="devices-swiper-prev"
+            aria-label="previous slide"
+            bind:this={devicesSwiperControlLeft}>
             <svg
               aria-hidden="true"
               role="img"
@@ -270,7 +217,10 @@
                 d="M49.5 25c0 13.531-10.969 24.5-24.5 24.5S.5 38.531.5 25 11.469.5 25 .5 49.5 11.469 49.5 25Z" />
             </svg>
           </button>
-          <button class="devices-swiper-next" aria-label="next slide">
+          <button
+            class="devices-swiper-next"
+            aria-label="next slide"
+            bind:this={devicesSwiperControlRight}>
             <svg
               aria-hidden="true"
               role="img"
@@ -303,7 +253,7 @@
 
   <HomeServices />
 
-  <section id="home-feature">
+  <section id="home-feature" bind:this={featureSection}>
     <SubHeading text="Our Subscription" version="grey" />
     <div class="container">
       <div class="mod">

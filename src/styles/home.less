@@ -93,7 +93,12 @@
             pointer-events: none;
         }
 
-        .swiper {
+        .swiper,
+        swiper-container {
+            display: block;
+            width: 100%;
+            position: relative;
+
             img {
                 width: 100%;
                 height: auto;
@@ -108,8 +113,9 @@
             position: relative;
             padding-top: .25em;
 
-            .portfolio-swiper-laptop {
+            .laptop-swiper {
                 display: block;
+                margin: 0 auto;
                 width: (660/20em);
                 height: (435/20em);
                 border-radius: .5em;
@@ -125,12 +131,13 @@
             left: calc(50% + 12em);
             z-index: 777;
 
-            .portfolio-swiper-phone {
+            .phone-swiper {
                 display: block;
                 background-color: #212121;
                 width: (150/20em);
                 height: (284/20em);
                 border-radius: 1em;
+                overflow: hidden;
             }
         }
     }
@@ -449,6 +456,10 @@
     @media only screen and (min-width: 1024px) {
         font-size: inherit;
         padding: 5em 0;
+    }
+
+    &.active {
+        background-color: skyblue;
     }
 
     .container {

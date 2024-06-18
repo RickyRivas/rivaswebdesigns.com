@@ -28,10 +28,10 @@ export const business = {
             imageURL: ""
         },
         {
-            name: "Faq",
-            path: "/faq",
-            title: "FAQ Page",
-            description: "FAQ Page Description",
+            name: "Portfolio",
+            path: "/portfolio",
+            title: "Portfolio Page",
+            description: "Portfolio Page Description",
             imageURL: ""
         },
         {
