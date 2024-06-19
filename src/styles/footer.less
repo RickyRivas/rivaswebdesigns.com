@@ -22,12 +22,13 @@ footer {
 
         color: #fff;
         display: block;
-        .fs(min(5.5vw, 2.5em));
+        .fs(min(5.75vw, 2.5em));
         .lh((@lh/@fs));
         .bold;
         text-transform: uppercase;
         position: relative;
         transition: color .33s ease;
+        text-align: center;
 
         &::before {
             content: '';
@@ -44,6 +45,7 @@ footer {
 
         @media only screen and (min-width: 768px) {
             .fs((@fs/20em));
+            text-align: left;
         }
 
         &:hover {
@@ -53,11 +55,12 @@ footer {
 
     .mid {
         display: flex;
-        padding: 1em 0;
         flex-wrap: wrap;
         position: relative;
+        padding: 0;
 
         @media only screen and (min-width: 768px) {
+            padding: 1em 0;
             flex-wrap: nowrap;
 
             &::before {

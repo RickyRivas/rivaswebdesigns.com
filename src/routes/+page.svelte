@@ -13,11 +13,14 @@
   import { enhance } from "$app/forms"
   import SubHeading from "$lib/components/SubHeading.svelte"
   import { fade } from "svelte/transition"
+  import AnimateCounter from "$lib/components/AnimateCounter.svelte"
 
   let email
   let showModal = false
   let message
   let featureSection
+
+  let startTimer
 
   // swiper
   // register swiper web components
@@ -49,6 +52,8 @@
     // sync slideshows
     laptopSwiper.swiper.controller.control = phoneSwiper.swiper
     phoneSwiper.swiper.controller.control = laptopSwiper.swiper
+
+    addClassInView(document.querySelector("#why"), "active", ".5")
   })
 </script>
 
@@ -318,26 +323,26 @@
       <div class="decor">
         <div class="item">
           <h3 class="topic">
-            <span class="trait">777</span>
-            Lorem ipsum dolor sit amet.
+            <span class="trait"> 3+</span>
+            years <br /> experience
           </h3>
         </div>
         <div class="item">
           <h3 class="topic">
-            <span class="trait">777</span>
-            Lorem ipsum dolor sit amet.
+            <span class="trait"> 100%</span>
+            customer <br /> satisfaction
           </h3>
         </div>
         <div class="item">
           <h3 class="topic">
-            <span class="trait">777</span>
-            Lorem ipsum dolor sit amet.
+            <span class="trait"> 175+</span>
+            websites <br /> built
           </h3>
         </div>
         <div class="item">
           <h3 class="topic">
-            <span class="trait">777</span>
-            Lorem ipsum dolor sit amet.
+            <span class="trait"> 20+ </span>
+            Satisfied <br /> Clients
           </h3>
         </div>
       </div>

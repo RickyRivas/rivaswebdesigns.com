@@ -538,7 +538,7 @@
         vertical-align: top;
         flex-wrap: wrap;
         max-width: (@width/20em);
-        font-size: ~"min(3vw, 2em)";
+        font-size: ~"min(4.5vw, 1.5em)";
         margin: 0 auto;
 
         @media only screen and (min-width: 768px) {
@@ -560,7 +560,7 @@
                     position: absolute;
                     width: (@width/20em);
                     height: 1px;
-                    bottom: 0;
+                    bottom: (-1em/20em);
                     left: 0;
                     background: linear-gradient(to right, transparent, #fff, transparent);
                     z-index: 1;
@@ -572,7 +572,7 @@
                     content: '';
                     position: absolute;
                     top: 0;
-                    right: 0;
+                    right: (-1/20em);
                     width: 1px;
                     height: (@width/20em);
                     background: linear-gradient(to bottom, transparent, #fff, transparent);
@@ -671,7 +671,8 @@
         max-width: (500/20em);
         text-align: left;
         background-color: var(--bg-alternate);
-        padding: 2em;
+        border: 1px solid var(--light-grey);
+        padding: 1.5em;
         box-shadow: var(--box-shadow);
 
         @media only screen and (min-width: 768px) {
@@ -679,17 +680,18 @@
             max-width: (800/20em);
             padding-left: (100/20em);
             margin-top: 2em;
+
+            .title,
+            p {
+                font-size: (16/20em);
+
+            }
         }
 
         .title {
             display: block;
-            font-size: (16/20em);
             margin-bottom: 2em;
             .bold;
-        }
-
-        p {
-            font-size: (16/20em);
         }
     }
 }
